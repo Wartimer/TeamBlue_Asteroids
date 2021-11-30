@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/ConstructionLight_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/Hammer_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/HardHat_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/Liquid_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/Metal_Simple_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/PaintBrush_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/PaintLabel_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/Plastic_Transparent.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Materials/Strap_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/ConstructionLight_Low.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/Workbench.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/Workshop_Set.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/jigsaw_low.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/safetyhat_low.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Models/small_plane.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Prefabs/Paint Supplies.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Prefabs/Workbench.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Prefabs/Workbench_LOD1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Shaders/Paint1G_WAnim_Shader.ShaderGraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Concrete/Ground_MetallicOcculusionSmoothness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Plastic/PlasticRidges_Albedo.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Plastic/PlasticRidges_Normal.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_Albedo.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Construction_Light/ConstructionLight_MetallicOcculusionSmoothness.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Jigsaw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Paint.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Paint/Paint1G_MetallicOcculusionRoughness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Props/Paint/Paint5G_AlbedoSmoothness.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ExampleAssets/Textures/Wood/OBS_MetallicOcculusionSmoothness.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_01_S.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_01_S.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_03_L.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_03_L.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_04_XL.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsteroidPack/Asteroid_04_XL.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/Prefab/titaniun-fighter.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/Prefab/titaniun-fighter.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/t-fighterDemo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/t-fighterDemo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/t-fighterDemoSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Titanium-Fighter/t-fighterDemoSettings.lighting.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638298184859</updated>
-      <workItem from="1638298216922" duration="771000" />
+      <workItem from="1638298216922" duration="1252000" />
     </task>
     <servers />
   </component>
