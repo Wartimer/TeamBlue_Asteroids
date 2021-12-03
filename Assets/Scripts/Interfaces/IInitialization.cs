@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IInitialization : MonoBehaviour
+namespace TeamBlue_Asteroids
 {
-    // Start is called before the first frame update
-    void Start()
+    internal interface IInitialization : IController
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Initialization();
     }
 }
+
