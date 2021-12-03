@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_01_S.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_01_S.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_03_L.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_03_L.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_04_XL.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asteroid_04_XL.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/titaniun-fighter.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/titaniun-fighter.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker16.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker16.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
-    </list>
+    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638298184859</updated>
-      <workItem from="1638298216922" duration="67144000" />
+      <workItem from="1638298216922" duration="67739000" />
     </task>
     <servers />
   </component>
