@@ -10,6 +10,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background_Nebula_Red.prefab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background_Nebula_Red.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Enemies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/titaniun-fighter.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/titaniun-fighter.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
@@ -92,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638298184859</updated>
-      <workItem from="1638298216922" duration="81336000" />
+      <workItem from="1638298216922" duration="81930000" />
     </task>
     <servers />
   </component>
