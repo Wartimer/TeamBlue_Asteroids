@@ -15,7 +15,5 @@ MonoBehaviour:
   _playerModelPath: 
   _enemyDataPath: EnemyData
   _stage01Path: Prefabs/Stages/Stage01
-  _smallAsteroidPrefPath: 
-  _mediunmAsteroidPrefPath: 
-  _bigAsteroidPrefPath: 
-  _rocketPrefPath: 
+  _background01: Prefabs/Background/Background01
+  _stars01: Prefabs/Stars/Stars01

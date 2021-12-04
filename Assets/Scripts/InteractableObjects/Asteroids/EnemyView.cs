@@ -24,22 +24,28 @@ namespace TeamBlue_Asteroids
             set => _enemyModel = value;
         }
 
-        public void Move(float time)
+        internal void Execute(float time)
         {
-            _rigidBody.AddForce(Vector3.down * _speed * time);
+            Rotation(time);
+            Move(time);
         }
         
-        protected override void Interaction()
-        {
-            
-        }
-
         public void TakeDamage(int amount)
         {
             if (HitPoints > 0)
                 _hitpoints -= amount;
             if (HitPoints <= 0)
                 Dispose();
+        }
+        
+        protected override void Interaction()
+        {
+            
+        }
+        
+        public void Move(float time)
+        {
+            transform.position += (Vector3.down * _speed * time);
         }
         
         public void Rotation(float time)
@@ -50,12 +56,16 @@ namespace TeamBlue_Asteroids
                 Space.World);
         }
 
-        internal void Execute(float time)
+        private void OnBecameVisible()
         {
-            Rotation(time);
-            Move(time);
+           _collider.enabled = true;
         }
-        
+
+        private void OnBecameInvisible()
+        {
+            _collider.enabled = false;
+        }
+
         private void OnEnable()
         {
             EnemyModelInit();
@@ -64,10 +74,11 @@ namespace TeamBlue_Asteroids
         private void EnemyModelInit()
         {
             _speed = _enemyModel.Speed;
-            _rotationSpeed = Random.Range(-4, 4);
+            _rotationSpeed = Random.Range(-20, 20);
             _hitpoints = _enemyModel.HitPoints;
             _damage = _enemyModel.Damage;
             _rigidBody = GetComponent<Rigidbody>();
+            _collider = GetComponent<Collider>();
         }
 
     }
