@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="" />
+    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DinV/Dynamic Space Background/Sprites/Nebula Red.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background_Nebula_Red.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background_Nebula_Red.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Asteroids/EnemyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Asteroids/EnemyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-LowQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-LowQuality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-MediumQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-MediumQuality.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@11.0.0/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9244fb8344e84288877b43b45b29c242143a00/62/c11da7cf/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stages/BackgroundFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d909c80e34f4a76896bd88597d1591c18400/aa/20633d09/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/36/02b85da6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -27,7 +53,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994525" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34991708" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -66,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638298184859</updated>
-      <workItem from="1638298216922" duration="67739000" />
+      <workItem from="1638298216922" duration="81336000" />
     </task>
     <servers />
   </component>
@@ -90,5 +116,24 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/StarsController.cs</url>
+          <line>10</line>
+          <properties documentPath="C:\Coding\MyRepositories\TeamBlue_Asteroids\Assets\Scripts\Controllers\StarsController.cs" initialLine="10" containingFunctionPresentation="constructor 'StarsController'">
+            <startOffsets>
+              <option value="210" />
+            </startOffsets>
+            <endOffsets>
+              <option value="225" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

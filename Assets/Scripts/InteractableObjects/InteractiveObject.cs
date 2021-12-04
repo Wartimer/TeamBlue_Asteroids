@@ -6,8 +6,8 @@ namespace UnityTemplateProjects.InteractableObjects
     internal abstract class InteractiveObject : MonoBehaviour, IDisposable
     {
         private bool _isInteractable;
-        [SerializeField] protected Rigidbody _rigidBody;
-
+        protected Rigidbody _rigidBody;
+        protected Collider _collider;
         protected bool IsInteractable
         {
             get => _isInteractable;
