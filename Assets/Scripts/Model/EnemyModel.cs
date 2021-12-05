@@ -14,6 +14,5 @@ namespace TeamBlue_Asteroids
         internal int HitPoints => _hitpoints;
         internal int Damage => _damage;
         internal float Speed => _speed;
-        internal float RotationSpeed => _rotationSpeed;
     }
 }

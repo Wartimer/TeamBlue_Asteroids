@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UnityTemplateProjects.InteractableObjects
+namespace TeamBlue_Asteroids
 {
     internal abstract class InteractiveObject : MonoBehaviour, IDisposable
     {

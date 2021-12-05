@@ -11,7 +11,8 @@ namespace TeamBlue_Asteroids
         
         public StarsView CreateStars()
         {
-            return _data.Stars01;
+            var obj = _data.Stars01.AddComponent<StarsView>();
+            return obj;
         }
     }
 }
