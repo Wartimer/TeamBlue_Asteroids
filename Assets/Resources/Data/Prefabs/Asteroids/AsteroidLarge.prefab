@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: -4690883365365737673}
   - component: {fileID: -6132343452955273946}
   - component: {fileID: 7359294448874065307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AsteroidLarge
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99084d72256b460cbbe690ab56522e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidBody: {fileID: 0}
   _enemyModel: {fileID: 11400000, guid: bae0010a77637044095641c21d908ae1, type: 2}
 --- !u!54 &-6132343452955273946
 Rigidbody:

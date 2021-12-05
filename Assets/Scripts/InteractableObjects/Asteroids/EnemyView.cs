@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityTemplateProjects.InteractableObjects;
 using Random = UnityEngine.Random;
 
 namespace TeamBlue_Asteroids
@@ -14,11 +12,9 @@ namespace TeamBlue_Asteroids
         [SerializeField] private EnemyModel _enemyModel;
 
         public int HitPoints => _hitpoints;
-
         public float Speed => _speed;
-
         public int Damage => _damage;
-
+        
         internal EnemyModel Model
         {
             set => _enemyModel = value;
