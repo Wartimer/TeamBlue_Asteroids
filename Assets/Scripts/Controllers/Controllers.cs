@@ -2,17 +2,19 @@ using System.Collections.Generic;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class Controllers : IInitialization, IExecute, ILateExecute
+    internal sealed class Controllers : IInitialization, IExecute, ILateExecute, IFixedExecute
     {
         private readonly List<IInitialization> _initializeControllers;
         private readonly List<IExecute> _executeControllers;
         private readonly List<ILateExecute> _lateControllers;
+        private readonly List<IFixedExecute> _fixedControllers;
 
         internal Controllers()
         {
             _initializeControllers = new List<IInitialization>(8);
             _executeControllers = new List<IExecute>(8);
             _lateControllers = new List<ILateExecute>(8);
+            _fixedControllers = new List<IFixedExecute>(8);
         }
 
         internal Controllers Add(IController controller)
@@ -30,6 +32,11 @@ namespace TeamBlue_Asteroids
             if (controller is ILateExecute lateExecuteController)
             {
                 _lateControllers.Add(lateExecuteController);
+            }
+            
+            if (controller is IFixedExecute fixedController)
+            {
+                _fixedControllers.Add(fixedController);
             }
 
             return this;
@@ -56,6 +63,14 @@ namespace TeamBlue_Asteroids
             for (var index = 0; index < _lateControllers.Count; ++index)
             {
                 _lateControllers[index].LateExecute(deltaTime);
+            }
+        }
+
+        public void FixedExecute(float deltaTime)
+        {
+            for (var index = 0; index < _fixedControllers.Count; ++index)
+            {
+                _fixedControllers[index].FixedExecute(deltaTime);         
             }
         }
     }

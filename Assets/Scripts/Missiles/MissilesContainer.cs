@@ -4,21 +4,22 @@ namespace TeamBlue_Asteroids
 {
     internal sealed class MissilesContainer
     {
-        private List<Missile> _missiles;
+        private List<MissileView> _missiles;
 
-        internal List<Missile> Missiles => _missiles;
+        internal List<MissileView> Missiles => _missiles;
 
         internal MissilesContainer()
         {
-            _missiles = new List<Missile>();
+            _missiles = new List<MissileView>();
         }
 
-        internal void AddMissile(Missile obj)
+        internal void AddMissile(MissileView obj)
         {
+            obj.MissileDestroyed += RemoveMissile;
             _missiles.Add(obj);
         }
 
-        internal void RemoveMissile(Missile obj)
+        internal void RemoveMissile(MissileView obj)
         {
             obj.MissileDestroyed -= RemoveMissile;
             _missiles.Remove(obj);

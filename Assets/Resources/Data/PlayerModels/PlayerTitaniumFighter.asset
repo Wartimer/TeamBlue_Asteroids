@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752cb5ed3b5b4b9f9c18e28ab7dc13df, type: 3}
   m_Name: PlayerTitaniumFighter
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 2
   _hitPoints: 200
   _armour: 200

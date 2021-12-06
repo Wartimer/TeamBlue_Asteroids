@@ -53,7 +53,6 @@ namespace TeamBlue_Asteroids
             get
             {
                 var rocket = Resources.Load<GameObject>("Data/" + _rocket01);
-                Instantiate(rocket);
                 return rocket;
             }
         }
