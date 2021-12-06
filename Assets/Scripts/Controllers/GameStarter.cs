@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
@@ -24,6 +25,12 @@ namespace TeamBlue_Asteroids
         {
             var deltaTime = Time.deltaTime;
             _controllers.LateExecute(deltaTime);
+        }
+
+        private void FixedUpdate()
+        {
+            var deltaTime = Time.deltaTime;
+            _controllers.FixedExecute(deltaTime);
         }
 
         private void OnDestroy()

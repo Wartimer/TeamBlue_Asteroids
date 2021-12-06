@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class PlayerMoveController : IExecute, ICleanup
+    internal sealed class PlayerMoveController : IFixedExecute, ICleanup
     {
         private readonly float _speed;
         private float _horizontal;
@@ -12,14 +12,19 @@ namespace TeamBlue_Asteroids
         private IUserInputProxy _horizontalInputProxy;
         private Vector3 _move;
         private Camera _mainCamera;
-
+        private Rigidbody _playerRigidbody;
+        private Vector3 _acceleration;
+        
         public PlayerMoveController(IUserInputProxy horizontalInputProxy, PlayerView player, PlayerModel playerModel,
             Camera mainCamera)
         {
             _player = player;
-            _mainCamera = mainCamera;
             _playerModel = playerModel;
+            _mainCamera = mainCamera;
+            
             _speed = _playerModel.Speed;
+            _playerRigidbody = _player.gameObject.GetComponent<Rigidbody>();
+            
             _horizontalInputProxy = horizontalInputProxy;
             _horizontalInputProxy.AxisChange += OnHorizontalAxisChange;
         }
@@ -29,18 +34,14 @@ namespace TeamBlue_Asteroids
             _horizontal = value;
         }
 
-        public void Execute(float deltatime)
+        public void FixedExecute(float deltatime)
         {
             var speed = deltatime * _speed;
-            _move.Set(_horizontal * speed, 0.0f, 0.0f);
-            _player.transform.position += _move;
+            Debug.Log($"Speed: {speed}, Horizontal: {_horizontal}");
+            _acceleration.Set(_horizontal * speed, 0.0f, 0.0f);
+            _playerRigidbody.AddForce(_acceleration, ForceMode.VelocityChange);
         }
-
-        public void FixedExecute(float deltaTime)
-        {
-            
-        }
-
+        
         // private void PlayerMovementRestriction()
         // {
         //     if (_player.transform.position.x < _mainCamera.rect.xMin)
