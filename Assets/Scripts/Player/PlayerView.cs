@@ -15,8 +15,7 @@ namespace TeamBlue_Asteroids
         {
             fwd = transform.TransformDirection(Vector3.forward);
             var hit = new RaycastHit();
-            Debug.Log("InDrawRayMethod");
-            Debug.DrawRay(transform.position, fwd * 100, Color.red);
+            Debug.DrawRay(transform.position, fwd * 30, Color.red);
 
             if (Physics.Raycast(transform.position, fwd, out hit, 100))
             {
