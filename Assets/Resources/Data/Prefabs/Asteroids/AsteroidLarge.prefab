@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3665898635609755304}
-  - component: {fileID: -4690883365365737673}
   - component: {fileID: -6132343452955273946}
   - component: {fileID: 7359294448874065307}
+  - component: {fileID: -9072951260038206646}
   m_Layer: 6
   m_Name: AsteroidLarge
   m_TagString: Enemy
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4690883365365737673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382550705148648719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99084d72256b460cbbe690ab56522e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyModel: {fileID: 11400000, guid: bae0010a77637044095641c21d908ae1, type: 2}
 --- !u!54 &-6132343452955273946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,6 +64,19 @@ CapsuleCollider:
   m_Height: 1.78
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-9072951260038206646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382550705148648719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622318bf512b6a144be98263193307f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyModel: {fileID: 11400000, guid: bae0010a77637044095641c21d908ae1, type: 2}
 --- !u!1001 &6060603563354385654
 PrefabInstance:
   m_ObjectHideFlags: 0

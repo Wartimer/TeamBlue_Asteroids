@@ -31,7 +31,7 @@ namespace TeamBlue_Asteroids
         private void GetEnemy(float time)
         {
             var pointIndex = Random.Range(0, _spawnPoints.Count);
-            var rnd = Random.Range(0, 3);
+            var rnd = Random.Range(0, 4);
             EnemyView enemy;
             switch (rnd)
             {
@@ -45,6 +45,11 @@ namespace TeamBlue_Asteroids
                     break;
                 case 2:
                     enemy = _enemyFactory.CreateEnemy(EnemyType.LargeAsteroid);
+                    SpawnEnemy(enemy, _spawnPoints[pointIndex].transform.position);
+                    break;
+
+                case 3:
+                    enemy = _enemyFactory.CreateEnemy(EnemyType.Ship);
                     SpawnEnemy(enemy, _spawnPoints[pointIndex].transform.position);
                     break;
             };

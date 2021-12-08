@@ -86,12 +86,14 @@ namespace TeamBlue_Asteroids
             {
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                    
+
                     SetTarget(hit.collider.transform);
                     Debug.Log(hit);
                 }
-            }
-            
+
+            }          
+
+
         }
 
         private void SetTarget(Transform newTarget)
