@@ -15,10 +15,7 @@ MonoBehaviour:
   _enemyInfos:
   - Type: 1
     EnemyPrefab: {fileID: 4488378884613109239, guid: fb9cfc9055250b14393c973c74518802, type: 3}
-    enemyModel: {fileID: 11400000, guid: 95ad2570d7c842243b350930b4bed15d, type: 2}
   - Type: 2
     EnemyPrefab: {fileID: 3107534515962082258, guid: 195ad844ec2ab6a448a8c1b54dbf0fee, type: 3}
-    enemyModel: {fileID: 11400000, guid: 92ddf0daaac41d44cab3cd9d049fd780, type: 2}
   - Type: 3
     EnemyPrefab: {fileID: -4690883365365737673, guid: 5af305be3c7d8dd4297f602ac32e7313, type: 3}
-    enemyModel: {fileID: 11400000, guid: bae0010a77637044095641c21d908ae1, type: 2}

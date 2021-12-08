@@ -1,6 +1,9 @@
 using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
 
 namespace TeamBlue_Asteroids
 {
@@ -8,22 +11,28 @@ namespace TeamBlue_Asteroids
     {
         internal event Action<MissileView> MissileDestroyed;
         
-        private float _speed = 5f;
+        private float _speed = 6f;
         private float _damage = 10f;
-        private float _ejectForce = 1.2f;
-        private float _firstEjected = 0;
+        private float _ejectForce = 2.5f;
+        [SerializeField] private float _firstEjected = 0;
         private float _timeToStartMove = 0.2f;
-        private Transform _target;
+        [SerializeField] private Transform _target;
         private Vector3 _ejectDirection;
-
-
+        private Rigidbody _rigidBody;
+       
         internal float Speed => _speed;
 
         internal Transform Target
         {
             set => _target = value;
         }
-        
+
+
+        private void Awake()
+        {
+            _rigidBody = GetComponent<Rigidbody>();
+        }
+
         protected virtual void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Enemy")) return;
@@ -31,36 +40,40 @@ namespace TeamBlue_Asteroids
             Dispose();
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Boundaries"))
+                Dispose();
+        }
+
         public void Dispose()
         {
             MissileDestroyed?.Invoke(this);
-            Destroy(gameObject);
         }
-
-        // private void Update()
-        // {
-        //     transform.Translate(Vector3.forward * _speed * Time.deltaTime);
-        //     
-        //     
-        // }
 
         private void OnEnable()
         {
-            var rnd = Random.Range(-1f, 1f);
+            var rnd = Random.Range(-1, 2);
             _ejectDirection.Set(rnd, 1, 0);
+            
+            
+            _rigidBody.AddForce(_ejectDirection * _ejectForce, ForceMode.Impulse);
+            transform.LookAt(_target);
+        }
 
-            gameObject.GetComponent<Rigidbody>().AddForce(_ejectDirection * _ejectForce, ForceMode.Impulse);
+        private void OnDisable()
+        {
+            _firstEjected = 0.0f;
         }
 
         internal void Move(float deltaTime)
         {
             _firstEjected += deltaTime;
-            if(_firstEjected > _timeToStartMove)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * deltaTime);
-                //transform.position = Vector3.Lerp(transform.position, _target.position, _speed * deltaTime);
-                transform.LookAt(_target);
-            }
+            if (!(_firstEjected > _timeToStartMove)) return;
+            _rigidBody.Sleep();
+            transform.position = Vector3.MoveTowards(transform.position, _target.position,  _speed * deltaTime );
+            transform.LookAt(_target);
         }
+        
     }
 }

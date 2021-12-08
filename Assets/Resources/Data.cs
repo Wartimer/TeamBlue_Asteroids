@@ -16,7 +16,9 @@ namespace TeamBlue_Asteroids
         [SerializeField] private string _background01;
         [SerializeField] private string _stars01;
         [SerializeField] private string _rocket01;
-
+        
+        
+        
 
         internal GameObject Stage01
         {
@@ -48,11 +50,11 @@ namespace TeamBlue_Asteroids
             }
         }
 
-        internal GameObject Rocket
+        internal MissileView Rocket
         {
             get
             {
-                var rocket = Resources.Load<GameObject>("Data/" + _rocket01);
+                var rocket = Resources.Load<MissileView>("Data/" + _rocket01);
                 return rocket;
             }
         }

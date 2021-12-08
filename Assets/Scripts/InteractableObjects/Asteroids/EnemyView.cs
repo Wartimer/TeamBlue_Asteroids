@@ -9,6 +9,7 @@ namespace TeamBlue_Asteroids
         private float _rotationSpeed;
         private int _hitpoints;
         private int _damage;
+        
         [SerializeField] private EnemyModel _enemyModel;
 
         public int HitPoints => _hitpoints;
@@ -70,9 +71,10 @@ namespace TeamBlue_Asteroids
         private void EnemyModelInit()
         {
             _speed = _enemyModel.Speed;
-            _rotationSpeed = Random.Range(-20, 20);
             _hitpoints = _enemyModel.HitPoints;
             _damage = _enemyModel.Damage;
+            
+            _rotationSpeed = Random.Range(-20, 20);
             _rigidBody = GetComponent<Rigidbody>();
             _collider = GetComponent<Collider>();
         }

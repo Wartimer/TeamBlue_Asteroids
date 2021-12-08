@@ -11,9 +11,9 @@ namespace TeamBlue_Asteroids
             _data = data;
         }
         
-        public MissileView CreateMissile(Vector3 position, Vector3 lookDirection)
+        public MissileView CreateMissile()
         {
-            return Object.Instantiate(_data.Rocket, position, Quaternion.LookRotation(lookDirection)).AddComponent<MissileView>();
+            return _data.Rocket;
         }
     }
 }
