@@ -37,7 +37,7 @@ namespace TeamBlue_Asteroids
         public void FixedExecute(float deltatime)
         {
             var speed = deltatime * _speed;
-            Debug.Log($"Speed: {speed}, Horizontal: {_horizontal}");
+            //Debug.Log($"Speed: {speed}, Horizontal: {_horizontal}");
             _acceleration.Set(_horizontal * speed, 0.0f, 0.0f);
             _playerRigidbody.AddForce(_acceleration, ForceMode.VelocityChange);
         }

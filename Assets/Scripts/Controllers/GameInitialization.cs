@@ -20,10 +20,19 @@ namespace TeamBlue_Asteroids
             var stageFactory = new StageFactory(data);
             var stageInitialization = new StageInitialization(stageFactory);
             var enemyFactory = new EnemyFactory(data.EnemyData);
-            var missileFactory = new MissileFactory(data);
+            
+            
             var interactiveObjectsController = new InteractiveObjectsController();
             var spawnController = new SpawnController(enemyFactory, interactiveObjectsController);
+            
+            //Shooting System Initialization
+            
             var missilesContainer = new MissilesContainer();
+            var missileFactory = new MissileFactory(data);
+            var rocketPool = new RocketPool(playerInitialization.GetPlayer().transform, missileFactory);
+            var enemyScanner = new EnemyScanner(playerInitialization.GetPlayer().transform);
+            var shooter = new Shooter(playerInitialization.GetPlayer(), missilesContainer, enemyScanner, rocketPool );
+            
             //Добавление в Инициализирующие контроллеры
             // controllers.Add(backGroundInitialization);
             // controllers.Add(starsInitialization);
@@ -38,7 +47,7 @@ namespace TeamBlue_Asteroids
             controllers.Add(new PlayerMoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(),
                 data.PlayerTitaniumFighter, camera));
             controllers.Add(new MissilesMoveController(missilesContainer));
-            controllers.Add(new PlayerShootController(playerInitialization.GetPlayer(), missileFactory, missilesContainer));
+            controllers.Add(new PlayerShootController(shooter, enemyScanner));
         }
     }
 }

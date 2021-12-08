@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace TeamBlue_Asteroids
 {
-    internal class MissilesMoveController : IExecute
+    internal class MissilesMoveController : IFixedExecute
     {
         private List<MissileView> _missiles;
         
@@ -10,7 +10,7 @@ namespace TeamBlue_Asteroids
         {
             _missiles = missilesContainer.Missiles;
         }
-        public void Execute(float time)
+        public void FixedExecute(float time)
         {
             foreach(var missile in _missiles)
                 missile.Move(time);

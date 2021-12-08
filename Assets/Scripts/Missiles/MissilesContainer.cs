@@ -13,16 +13,14 @@ namespace TeamBlue_Asteroids
             _missiles = new List<MissileView>();
         }
 
-        internal void AddMissile(MissileView obj)
+        internal void AddMissile(MissileView missile)
         {
-            obj.MissileDestroyed += RemoveMissile;
-            _missiles.Add(obj);
+            _missiles.Add(missile);
         }
 
-        internal void RemoveMissile(MissileView obj)
+        internal void RemoveMissile(MissileView missile)
         {
-            obj.MissileDestroyed -= RemoveMissile;
-            _missiles.Remove(obj);
+            _missiles.Remove(missile);
         }
     }
 }
