@@ -1,3 +1,6 @@
+using System;
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
     internal class BackgroundFactory : IBackGroundFactory
@@ -9,9 +12,14 @@ namespace TeamBlue_Asteroids
             _data = data;
         }
         
-        public StageBackgroundView CreateBackground()
+        public GameObject CreateBackground(BgType type)
         {
-            return _data.BackGround01.AddComponent<StageBackgroundView>();
+            if(type == BgType.FastBg)
+                return _data.BackGround01;
+            if(type == BgType.SlowBG)
+                return _data.BackGround02;
+            
+            return null;
         }
     }
 }

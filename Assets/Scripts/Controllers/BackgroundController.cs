@@ -1,18 +1,24 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class BackgroundController : ILateExecute
+    internal sealed class BackgroundController : IExecute
     {
-        private StageBackgroundView _stageBackgroundView;
+        private List<StageBackgroundView> _stageBackgroundViews;
 
         internal BackgroundController()
         {
-            _stageBackgroundView = Object.FindObjectOfType<StageBackgroundView>();
+            _stageBackgroundViews = Object.FindObjectsOfType<StageBackgroundView>().ToList();
         }
-        public void LateExecute(float deltaTime)
+        public void Execute(float deltaTime)
         {
-            _stageBackgroundView.Execute(deltaTime);
+            foreach (var background in _stageBackgroundViews)
+            {
+                background.Execute(deltaTime);
+                
+            }
         }
     }
 }
