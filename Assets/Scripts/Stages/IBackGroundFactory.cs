@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
     internal interface IBackGroundFactory
     {
-        StageBackgroundView CreateBackground();
+        GameObject CreateBackground(BgType type);
     }
 }

@@ -1,14 +1,17 @@
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
     public class BackGroundInitialization : IInitialization
     {
         private readonly BackgroundFactory _backgroundFactory;
-        private StageBackgroundView _background;
+        private GameObject _background;
 
         internal BackGroundInitialization(BackgroundFactory backgroundFactory)
         {
             _backgroundFactory = backgroundFactory;
-            _background = backgroundFactory.CreateBackground();
+            _background = backgroundFactory.CreateBackground(BgType.FastBg);
+            _background = backgroundFactory.CreateBackground(BgType.SlowBG);
         }
         
         public void Initialization()
@@ -16,7 +19,7 @@ namespace TeamBlue_Asteroids
             
         }
 
-        internal StageBackgroundView GetBackground()
+        internal GameObject GetBackground()
         {
             return _background;
         }

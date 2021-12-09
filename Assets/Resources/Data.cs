@@ -14,11 +14,13 @@ namespace TeamBlue_Asteroids
         [Space] [Header("Stage Objects Paths")] 
         [SerializeField] private string _stage01Path;
         [SerializeField] private string _background01;
+        [SerializeField] private string _background02;
         [SerializeField] private string _stars01;
         [SerializeField] private string _rocket01;
-        
-        
-        
+
+
+        [Space] [Header("Particles Paths")] 
+        [SerializeField] private string _explosionPath;
 
         internal GameObject Stage01
         {
@@ -39,7 +41,17 @@ namespace TeamBlue_Asteroids
                 return background;
             }
         }
-
+        
+        internal GameObject BackGround02
+        {
+            get
+            {
+                var background = Resources.Load<GameObject>("Data/" + _background02);
+                Instantiate(background);
+                return background;
+            }
+        }
+        
         internal GameObject Stars01
         {
             get
@@ -56,6 +68,15 @@ namespace TeamBlue_Asteroids
             {
                 var rocket = Resources.Load<MissileView>("Data/" + _rocket01);
                 return rocket;
+            }
+        }
+
+        internal GameObject Explosion
+        {
+            get
+            {
+                var explosion = Resources.Load<GameObject>("Data/" + _explosionPath);
+                return explosion;
             }
         }
 

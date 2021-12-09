@@ -1,20 +1,19 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace TeamBlue_Asteroids
 {
-    internal class EnemyView : InteractiveObject, IDamagable, IMove, IEnemy
+    internal class EnemyView : InteractiveObject, IDamagable, IMove
     {
+        internal event Action<EnemyView> EnemyDead;
+        
         private float _speed;
         private float _rotationSpeed;
-        private int _hitpoints;
+        private int _hitPoints;
         private int _damage;
         [SerializeField] private EnemyModel _enemyModel;
 
-        public int HitPoints => _hitpoints;
-        public float Speed => _speed;
-        public int Damage => _damage;
-        
         internal EnemyModel Model
         {
             set => _enemyModel = value;
@@ -27,9 +26,9 @@ namespace TeamBlue_Asteroids
 
         public void TakeDamage(int amount)
         {
-            if (HitPoints > 0)
-                _hitpoints -= amount;
-            if (HitPoints <= 0)
+            if (_hitPoints > 0)
+                _hitPoints -= amount;
+            if (_hitPoints <= 0)
                 Dispose();
         }
         
@@ -43,7 +42,6 @@ namespace TeamBlue_Asteroids
             transform.position += (Vector3.down * _speed * time);
         }
         
-
         protected virtual void OnEnable()
         {
             EnemyModelInit();
@@ -52,10 +50,15 @@ namespace TeamBlue_Asteroids
         protected virtual void EnemyModelInit()
         {
             _speed = _enemyModel.Speed;
-            _hitpoints = _enemyModel.HitPoints;
+            _hitPoints = _enemyModel.HitPoints;
             _damage = _enemyModel.Damage;         
             _collider = GetComponent<Collider>();
         }
 
+        public override void Dispose()
+        {
+            EnemyDead?.Invoke(this);
+            base.Dispose();
+        }
     }
 }

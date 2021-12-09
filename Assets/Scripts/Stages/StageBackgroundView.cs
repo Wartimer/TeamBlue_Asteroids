@@ -7,7 +7,7 @@ namespace TeamBlue_Asteroids
 
     public class StageBackgroundView : MonoBehaviour, IMove
     {
-        private float _speed = 5f;
+        [SerializeField] private float _speed = 5f;
         private Vector3 startPos;
         private float repeatWidth;
         public float Speed => _speed;
@@ -27,7 +27,7 @@ namespace TeamBlue_Asteroids
         
         public void Move(float time)
         {
-            transform.Translate(Vector3.down * Speed * time, Space.World);
+            transform.Translate(Vector3.down * Speed * time, Space.Self);
             // If background moves left by its repeat width, move it back to start position
             if (transform.position.y < startPos.y - repeatWidth)
             {
