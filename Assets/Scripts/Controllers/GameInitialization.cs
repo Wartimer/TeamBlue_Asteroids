@@ -20,9 +20,14 @@ namespace TeamBlue_Asteroids
             var stageFactory = new StageFactory(data);
             var stageInitialization = new StageInitialization(stageFactory);
             var enemyFactory = new EnemyFactory(data.EnemyData);
+
+
+            var effectsFactory = new EffectFactory(data);
+            var effectsPool = new EffectsPool(effectsFactory);
+            var explosionController = new ExplosionSpawnController(effectsPool);
             
             
-            var interactiveObjectsController = new InteractiveObjectsController();
+            var interactiveObjectsController = new InteractiveObjectsController(explosionController);
             var spawnController = new SpawnController(enemyFactory, interactiveObjectsController);
             
             //Shooting System Initialization
@@ -42,6 +47,7 @@ namespace TeamBlue_Asteroids
             controllers.Add(new BackgroundController());
             controllers.Add(spawnController);
             controllers.Add(interactiveObjectsController);
+            controllers.Add(explosionController);
             
             controllers.Add(new InputController(inputInitialization.GetInput()));
             controllers.Add(new PlayerMoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(),

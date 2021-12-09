@@ -5,6 +5,7 @@ namespace TeamBlue_Asteroids
 {
     internal abstract class InteractiveObject : MonoBehaviour, IDisposable
     {
+
         private bool _isInteractable;
         protected Rigidbody _rigidBody;
         protected Collider _collider;
@@ -28,8 +29,14 @@ namespace TeamBlue_Asteroids
             IsInteractable = false;
             Dispose();
         }
+        
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Boundaries"))
+                Dispose();
+        }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Destroy(gameObject);
         }

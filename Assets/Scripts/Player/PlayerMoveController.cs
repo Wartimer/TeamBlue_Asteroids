@@ -39,7 +39,7 @@ namespace TeamBlue_Asteroids
             var speed = deltatime * _speed;
             //Debug.Log($"Speed: {speed}, Horizontal: {_horizontal}");
             _acceleration.Set(_horizontal * speed, 0.0f, 0.0f);
-            _playerRigidbody.AddForce(_acceleration, ForceMode.VelocityChange);
+            _playerRigidbody.AddForce(_acceleration, ForceMode.Impulse);
         }
         
         // private void PlayerMovementRestriction()

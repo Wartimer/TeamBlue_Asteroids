@@ -17,5 +17,7 @@ MonoBehaviour:
   _playerDataPath: PlayerData
   _stage01Path: Prefabs/Stages/Stage01
   _background01: Prefabs/Background/Background01
+  _background02: Prefabs/Background/Background02
   _stars01: Prefabs/Stars/Stars01
-  _rocket01: Missiles/Rocket
+  _rocket01: Prefabs/Missiles/Rocket
+  _explosionPath: Prefabs/Effects/Explosion
