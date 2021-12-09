@@ -1,178 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Readme.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Readme.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Missiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Missiles/Rocket.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Missiles/Rocket.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/PlayerModels/PlayerTitaniumFighter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/PlayerModels/PlayerTitaniumFighter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Background/Background01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Ships/EnemyShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Ships/EnemyShip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stages/Stage01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stars/Stars01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Stars/Stars01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BackGroundInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BackGroundInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/BackgroundController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/BackgroundController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/EnemyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/EnemyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/IDamagable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/IDamagable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/IEnemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/Enemy/IEnemy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObjectsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractableObjects/InteractiveObjectsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Missiles/MissileView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Missiles/MissileView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stages/BackgroundFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stages/BackgroundFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stages/IBackGroundFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stages/IBackGroundFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stages/StageBackgroundView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stages/StageBackgroundView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spaceship Fighter/Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spaceship Fighter/Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spaceship Fighter/SceneSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spaceship Fighter/SceneSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleAfterburner.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleAfterburner.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleDuststorm.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleDuststorm.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFireball.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFireball.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFirecloud.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFirecloud.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFirework.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFirework.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFlameLicks.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFlameLicks.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFlames.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleFlames.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleGlow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleGlow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeBlack.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeBlack.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeMobile.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeMobile.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeVertlit.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeVertlit.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeWhite.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSmokeWhite.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSpark.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSpark.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSplashes.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSplashes.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSpray.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSpray.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSteam.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSteam.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSteamMobile.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleSteamMobile.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleWaterSpray.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Materials/ParticleWaterSpray.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/ParticleSystemsGuidelines.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/ParticleSystemsGuidelines.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Afterburner.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Afterburner.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/DustStorm.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/DustStorm.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/DustStormMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/DustStormMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Explosion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Explosion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/ExplosionMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/ExplosionMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FireComplex.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FireComplex.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FireMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FireMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Fireworks.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Fireworks.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Flare.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Flare.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FlareMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/FlareMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Hose.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Hose.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/HoseMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/HoseMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Smoke.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Smoke.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Steam.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/Steam.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/SteamMobile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/SteamMobile.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/TyreBurnoutSmoke.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/TyreBurnoutSmoke.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/WildFire.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Prefabs/WildFire.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAdd.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAdd.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAddSoft.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAddSoft.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAlpha.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Shaders/PriorityParticleAlpha.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleBokeh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleBokeh.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleCloudBlack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleCloudBlack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleCloudWhite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleCloudWhite.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFireballSheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFireballSheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFirecloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFirecloud.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlameLickSheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlameLickSheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlamesSheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlamesSheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/ParticleFlare.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/Spark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/Spark.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/SplashesFineParticle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/SplashesFineParticle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/SplashesLargeParticle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Textures/SplashesLargeParticle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/DawnDusk Skybox.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/DawnDusk Skybox.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_back.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_back.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_down.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_down.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_front.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_front.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_left.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_left.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_right.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_right.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_up.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Skyboxes/Textures/DawnDusk/DawnDusk_up.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,6 +25,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9244fb8344e84288877b43b45b29c242143a00/b8/8c9ed177/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stages/BackgroundFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9244fb8344e84288877b43b45b29c242143a00/62/c11da7cf/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/View/DestroyOutOfBounds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d909c80e34f4a76896bd88597d1591c18400/aa/20633d09/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eaac78d7469646f196b007a8938ec1cc5000/a0/9d53ffcd/PlayerView.cs" root0="SKIP_HIGHLIGHTING" />
@@ -254,7 +84,7 @@
       <updated>1638298184859</updated>
       <workItem from="1638298216922" duration="124639000" />
       <workItem from="1638806415193" duration="78745000" />
-      <workItem from="1639003151386" duration="12401000" />
+      <workItem from="1639003151386" duration="12999000" />
     </task>
     <servers />
   </component>
