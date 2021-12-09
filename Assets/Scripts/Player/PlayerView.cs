@@ -10,7 +10,7 @@ namespace TeamBlue_Asteroids
     internal sealed class PlayerView : MonoBehaviour
     {
         private Vector3 fwd;
-        
+              
         internal bool EnemyInSight()
         {
             fwd = transform.TransformDirection(Vector3.forward);
@@ -23,9 +23,10 @@ namespace TeamBlue_Asteroids
                 {
                     Debug.Log(hit);
                     return true;
-                }
-            }
 
+                }
+                
+            }            
             return false;
         }
 

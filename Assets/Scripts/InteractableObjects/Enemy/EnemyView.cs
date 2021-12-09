@@ -6,7 +6,6 @@ namespace TeamBlue_Asteroids
     internal class EnemyView : InteractiveObject, IDamagable, IMove, IEnemy
     {
         private float _speed;
-        private float _rotationSpeed;
         private int _hitpoints;
         private int _damage;
         [SerializeField] private EnemyModel _enemyModel;
