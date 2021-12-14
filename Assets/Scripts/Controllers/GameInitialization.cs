@@ -20,6 +20,7 @@ namespace TeamBlue_Asteroids
             var stageFactory = new StageFactory(data);
             var stageInitialization = new StageInitialization(stageFactory);
             var enemyFactory = new EnemyFactory(data.EnemyData);
+            var soundFactory = new SoundFactory(data.SoundsData);
 
 
             var effectsFactory = new EffectFactory(data);

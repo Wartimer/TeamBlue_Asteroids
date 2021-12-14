@@ -14,6 +14,7 @@ namespace TeamBlue_Asteroids
         private Shooter _shooter;
         private EnemyScanner _enemyScanner;
         
+        
         internal PlayerShootController(Shooter shooter, EnemyScanner enemyScanner)
         {
             _shooter = shooter;
@@ -22,9 +23,9 @@ namespace TeamBlue_Asteroids
         
         public void Execute(float time)
         {
-            _shooter.Shoot(time);
+            _shooter.Shoot(time);           
             _enemyScanner.ScanTargets(time);
-
+            
         }
 
 

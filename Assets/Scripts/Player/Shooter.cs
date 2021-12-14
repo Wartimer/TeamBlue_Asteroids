@@ -12,7 +12,8 @@ namespace TeamBlue_Asteroids
 
         private PlayerView _player;
         private EnemyScanner _enemyScanner;
-        
+        private SoundFactory _soundFactory;
+
         internal Shooter(PlayerView player, MissilesContainer movingMissiles, EnemyScanner enemyScanner, RocketPool rocketPool)
         {
             _player = player;
@@ -34,6 +35,7 @@ namespace TeamBlue_Asteroids
                 _movingMissiles.AddMissile(obj.GetComponent<MissileView>());
                 obj.GetComponent<MissileView>().MissileDestroyed += Destroy;
                 _firstShot = 0f;
+                
             }   
             
         }
