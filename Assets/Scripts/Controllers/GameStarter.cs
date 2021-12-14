@@ -6,12 +6,13 @@ namespace TeamBlue_Asteroids
     internal sealed class GameStarter : MonoBehaviour
     {
         [SerializeField] private Data _data;
+        [SerializeField] private RouteData _routeData;
         private Controllers _controllers;
         
         private void Start()
         {
             _controllers = new Controllers();
-            new GameInitialization(_controllers, _data);
+            new GameInitialization(_controllers, _data, _routeData);
             _controllers.Initialization();
         }
 

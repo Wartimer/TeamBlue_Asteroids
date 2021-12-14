@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
+using Asteroids;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace TeamBlue_Asteroids
 {
@@ -12,18 +12,22 @@ namespace TeamBlue_Asteroids
         private readonly Stack<MissileView> _stack = new Stack<MissileView>();
         private Transform _root;
         private MissileFactory _missileFactory;
+        private RouteFactory _routeFactory;
         private Vector3 _forward;
-        
+        private Vector3 _routePosition;
+        private MissileView _currentMissile;
 
-        internal RocketPool(Transform root, MissileFactory missileFactory)
+        internal RocketPool(Transform root, MissileFactory missileFactory, RouteFactory routeFactory)
         {
             _root = root;
+            _routeFactory = routeFactory;
             _missileFactory = missileFactory;
             _forward = _root.TransformDirection(Vector3.forward);
         }
 
         internal GameObject Pop()
         {
+            var rnd = Random.Range(0, 2);
             GameObject missile;
             if (_stack.Count == 0)
             {
@@ -33,7 +37,13 @@ namespace TeamBlue_Asteroids
             {
                 missile = _stack.Pop().gameObject;
             }
-            missile.gameObject.SetActive(true);
+
+            _currentMissile = missile.GetComponent<MissileView>();
+            _currentMissile.gameObject.SetActive(true);
+            _routePosition = _root.position;
+            var route = _routeFactory.CreateRoute(rnd, _routePosition);
+            _currentMissile.Route = route;
+
             missile.transform.SetParent(null);
             return missile;
         }
@@ -55,5 +65,7 @@ namespace TeamBlue_Asteroids
             }
             Object.Destroy(_root.gameObject);
         }
+        
+        
     }
 }

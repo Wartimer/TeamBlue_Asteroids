@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e0136973cf4b5aa5e552b9c4887bdc, type: 3}
+  m_Name: RocketRouteData
+  m_EditorClassIdentifier: 
+  _routeInfos:
+  - ID: 0
+    Route: {fileID: 3860257959724294846, guid: 28d02a3432285d947a27d339bad514d6, type: 3}
+  - ID: 1
+    Route: {fileID: 3689217441987641343, guid: 20d38c791a2a2a64fba06d5811c1a14a, type: 3}
