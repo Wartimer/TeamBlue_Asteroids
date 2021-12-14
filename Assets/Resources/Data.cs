@@ -10,7 +10,10 @@ namespace TeamBlue_Asteroids
         [SerializeField] private string _enemyDataPath;
         [SerializeField] private string _playerDataPath;
 
-        
+        [Space] [Header("Sounds Paths")]
+        [SerializeField] private string _soundsPath;
+
+
         [Space] [Header("Stage Objects Paths")] 
         [SerializeField] private string _stage01Path;
         [SerializeField] private string _background01;
@@ -21,6 +24,8 @@ namespace TeamBlue_Asteroids
 
         [Space] [Header("Particles Paths")] 
         [SerializeField] private string _explosionPath;
+
+        
 
         internal GameObject Stage01
         {
@@ -85,5 +90,7 @@ namespace TeamBlue_Asteroids
         internal PlayerData PlayerData => Resources.Load<PlayerData>("Data/" + _playerDataPath);
 
         internal PlayerModel PlayerTitaniumFighter => Resources.Load<PlayerModel>("Data/" + _playerModelPath);
+
+        internal SoundsData SoundsData => Resources.Load<SoundsData>("Data" + _soundsPath);
     }
 }
