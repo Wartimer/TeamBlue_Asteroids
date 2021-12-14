@@ -45,9 +45,9 @@ namespace TeamBlue_Asteroids
                 if (!Physics.Raycast(playerTransform.position, _forward, out hit, 11)) return;
 
                 if (!hit.collider.gameObject.CompareTag("Enemy")) return;
-                
                 SetTarget(hit.collider.transform);
                 Debug.Log(hit);
+
             }
         }
         
