@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b88bbf8a1714b2e98b484b3df32b21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstEjected: 0
   _target: {fileID: 0}
 --- !u!54 &4836976833141178154
 Rigidbody:
@@ -182,7 +181,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1c2a12de20e272844807b497f77cc1c1, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -257,6 +256,6 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.5
+  m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1

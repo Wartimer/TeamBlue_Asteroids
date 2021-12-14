@@ -30,6 +30,7 @@ namespace TeamBlue_Asteroids
             {
                 var obj = _rocketPool.Pop();
                 obj.GetComponent<MissileView>().Target = _enemyScanner.CurrentTarget;
+                obj.GetComponent<MissileView>().GetPoints();
                 _movingMissiles.AddMissile(obj.GetComponent<MissileView>());
                 obj.GetComponent<MissileView>().MissileDestroyed += Destroy;
                 _firstShot = 0f;

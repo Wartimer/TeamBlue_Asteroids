@@ -4,7 +4,7 @@ namespace TeamBlue_Asteroids
 {
     internal sealed class GameInitialization
     {
-        public GameInitialization(Controllers controllers, Data data)
+        public GameInitialization(Controllers controllers, Data data, RouteData routeData)
         {
             Camera camera = Camera.main;
             // Инициализация фабрики уровней и инициализация уровня
@@ -34,7 +34,8 @@ namespace TeamBlue_Asteroids
             
             var missilesContainer = new MissilesContainer();
             var missileFactory = new MissileFactory(data);
-            var rocketPool = new RocketPool(playerInitialization.GetPlayer().transform, missileFactory);
+            var routeFactory = new RouteFactory(playerInitialization.GetPlayer().transform, routeData);
+            var rocketPool = new RocketPool(playerInitialization.GetPlayer().transform, missileFactory, routeFactory);
             var enemyScanner = new EnemyScanner(playerInitialization.GetPlayer().transform);
             var shooter = new Shooter(playerInitialization.GetPlayer(), missilesContainer, enemyScanner, rocketPool );
             

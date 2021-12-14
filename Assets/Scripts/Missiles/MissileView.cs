@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
-using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,31 +14,46 @@ namespace TeamBlue_Asteroids
     {
         internal event Action<MissileView> MissileDestroyed;
         
-        private float _speed = 6f;
+        private float _routeSpeed = 2f;
+        private float _toTargetSpeed = 8f;
         private int _damage = 40;
-        private float _ejectForce = 2.5f;
-        [SerializeField] private float _firstEjected = 0;
-        private float _timeToStartMove = 0.2f;
+        private float _time;
+        private int _routeNumber;
+
+        private Vector3 _forward;
+
+        private bool _onStartingRoute = true;
+
+        private Transform _route;
         [SerializeField] private Transform _target;
-        private Vector3 _ejectDirection;
-        private Rigidbody _rigidBody;
+        
         private TrailRenderer _trail;
-       
-        internal float Speed => _speed;
+        
+        private Vector3 _p0;
+        private Vector3 _p1;
+        private Vector3 _p2;
+        private Vector3 _p3;
+        private Vector3 _missilePosition;
+        
 
         internal Transform Target
         {
             set => _target = value;
         }
 
-
+        internal Transform Route
+        {
+            set => _route = value;
+        }
+        
         private void Awake()
         {
+            _forward = transform.TransformDirection(Vector3.down);
             _trail = GetComponentInChildren<TrailRenderer>();
-            _rigidBody = GetComponent<Rigidbody>();
         }
+        
 
-        protected virtual void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Enemy")) return;
             other.GetComponent<IDamagable>().TakeDamage(_damage);
@@ -54,66 +70,76 @@ namespace TeamBlue_Asteroids
 
         public void Dispose()
         {
+            _route.gameObject.GetComponent<Route>().Dispose();
             MissileDestroyed?.Invoke(this);
         }
 
         private void OnEnable()
         {
+            _onStartingRoute = true;
             _trail.Clear();
-            var rnd = Random.Range(-1, 2);
-            _ejectDirection.Set(rnd, 1, 0);
-            
-            
-            _rigidBody.AddForce(_ejectDirection * _ejectForce, ForceMode.Impulse);
-            transform.LookAt(_target);
-        }
-
-        private void OnDisable()
-        {
-            _firstEjected = 0.0f;
-        }
-
-        private void SearchTargets()
-        {
-            Collider[] tmp = new Collider[20]; 
-                Physics.OverlapSphereNonAlloc(transform.position, 50, tmp);
-            
-            var targets = new HashSet<Transform>();
-            
-            foreach (Collider c in tmp)
-            {
-                if (c.transform != transform && c.transform.GetComponent<EnemyView>())
-                {
-                    targets.Add(c.transform);
-                }
-            }
-
-            
-            _target = targets.FirstOrDefault().transform;
-
-        }
-
-        internal void Move(float deltaTime)
-        {
-            _firstEjected += deltaTime;
-
-            if (!(_firstEjected > _timeToStartMove))
-            {
-                return;
-            }
-
-            _rigidBody.Sleep();
-            
-            if (_target == null)
-            {
-                transform.Translate(Vector3.forward * _speed * deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _target.position,  _speed * deltaTime );
-                transform.LookAt(_target);
-            }
+            _time = 0f;
         }
         
+        internal void Move(float deltaTime)
+        {
+            if (_onStartingRoute)
+            {
+                FollowRoute(deltaTime);
+            }
+            
+            if (transform.position.y >= _p3.y) _onStartingRoute = false;
+            
+            
+            
+            
+            
+                if (_target)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, _target.position,  _toTargetSpeed * deltaTime );
+                    //transform.localPosition += Vector3.forward * _toTargetSpeed * deltaTime;
+                    transform.LookAt(_target);
+                    
+                }
+                else
+                {
+                     transform.Translate(_forward * _toTargetSpeed * deltaTime);
+                }
+            
+           
+            // if(transform.position.z > _p3.z && _target == null)
+            //     transform.Translate(_forward * _toTargetSpeed * deltaTime);
+
+        }
+
+        internal void GetPoints()
+        {
+            _p0 = _route.GetChild(0).position;
+            _p1 = _route.GetChild(1).position;
+            _p2 = _route.GetChild(2).position;
+            _p3 = _route.GetChild(3).position;
+            
+            Debug.Log($"{_p0}");
+            Debug.Log($"{_p1}");
+            Debug.Log($"{_p2}");
+            Debug.Log($"{_p3}");
+        }
+
+        private void FollowRoute(float deltaTime)
+        {
+                        
+            _time += deltaTime * _routeSpeed;
+            _missilePosition = Mathf.Pow(1 - _time, 3) * _p0 +
+                               3 * Mathf.Pow(1 - _time, 2) * _time * _p1 +
+                               3 * (1 - _time) * Mathf.Pow(_time, 2) * _p2 +
+                               Mathf.Pow(_time, 3) * _p3;
+            
+            //transform.LookAt(_missilePosition);
+            transform.position = _missilePosition;
+            Debug.Log($"{_missilePosition}");
+            
+        }
+
     }
+
 }
