@@ -19,6 +19,10 @@ namespace TeamBlue_Asteroids
         private int _damage = 40;
         private float _time;
         private int _routeNumber;
+        private AudioSource _audioSource;
+        private AudioClip _asteroidShoot;
+        private SoundFactory _soundFactory;
+
 
         private Vector3 _forward;
 
@@ -35,21 +39,34 @@ namespace TeamBlue_Asteroids
         private Vector3 _p3;
         private Vector3 _missilePosition;
         
+        internal AudioClip Sound
+        {
+            set => _asteroidShoot = value;
+        }
 
         internal Transform Target
         {
             set => _target = value;
         }
+      
 
         internal Transform Route
         {
             set => _route = value;
         }
+
+        internal void PlayAsteroidSound()
+        {
+            _audioSource.PlayOneShot(_asteroidShoot);
+        }
+     
         
         private void Awake()
         {
             _forward = transform.TransformDirection(Vector3.down);
             _trail = GetComponentInChildren<TrailRenderer>();
+            _audioSource = GetComponent<AudioSource>();
+            
         }
         
 

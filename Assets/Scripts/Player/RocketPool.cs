@@ -16,13 +16,17 @@ namespace TeamBlue_Asteroids
         private Vector3 _forward;
         private Vector3 _routePosition;
         private MissileView _currentMissile;
+        private SoundFactory _soundFactory;
+        
 
-        internal RocketPool(Transform root, MissileFactory missileFactory, RouteFactory routeFactory)
+
+        internal RocketPool(Transform root, MissileFactory missileFactory, RouteFactory routeFactory, SoundFactory soundFactory)
         {
             _root = root;
             _routeFactory = routeFactory;
             _missileFactory = missileFactory;
             _forward = _root.TransformDirection(Vector3.forward);
+            _soundFactory = soundFactory;
         }
 
         internal GameObject Pop()
@@ -31,11 +35,16 @@ namespace TeamBlue_Asteroids
             GameObject missile;
             if (_stack.Count == 0)
             {
-                missile = Object.Instantiate(_missileFactory.CreateMissile(), _root.position, Quaternion.LookRotation(_forward)).gameObject;
+                
+                missile = Object.Instantiate(_missileFactory.CreateMissile(), _root.position, Quaternion.LookRotation(_forward)).gameObject;               
+
             }
             else
             {
                 missile = _stack.Pop().gameObject;
+                _currentMissile.Sound = _soundFactory.GetSound(SoundsType.RocketFlight);
+                _currentMissile.PlayAsteroidSound();
+
             }
 
             _currentMissile = missile.GetComponent<MissileView>();
@@ -43,9 +52,9 @@ namespace TeamBlue_Asteroids
             _routePosition = _root.position;
             var route = _routeFactory.CreateRoute(rnd, _routePosition);
             _currentMissile.Route = route;
-
             missile.transform.SetParent(null);
             return missile;
+
         }
 
         internal void Push(MissileView missile)

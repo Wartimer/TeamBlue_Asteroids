@@ -9,12 +9,12 @@ namespace TeamBlue_Asteroids
 
     internal class EnemyShipView : EnemyView
     {
-        
+      
         protected override void EnemyModelInit()
         {
             base.EnemyModelInit();
         }
-      
+     
 
     }
 }

@@ -91,6 +91,6 @@ namespace TeamBlue_Asteroids
 
         internal PlayerModel PlayerTitaniumFighter => Resources.Load<PlayerModel>("Data/" + _playerModelPath);
 
-        internal SoundsData SoundsData => Resources.Load<SoundsData>("Data" + _soundsPath);
+        internal SoundsData SoundsData => Resources.Load<SoundsData>("Data/" + _soundsPath);
     }
 }
