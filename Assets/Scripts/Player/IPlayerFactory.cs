@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
     internal interface IPlayerFactory
     {
-        PlayerView CreatePlayer(PlayerType type);
+        GameObject CreatePlayer(PlayerType type);
     }
 }

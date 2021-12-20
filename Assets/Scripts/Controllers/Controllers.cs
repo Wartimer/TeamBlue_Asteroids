@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
@@ -19,6 +20,9 @@ namespace TeamBlue_Asteroids
 
         internal Controllers Add(IController controller)
         {
+            if (controller is IRemoveFromControllers controllerToRemove)
+                controllerToRemove.PlayerRemoved += Remove;
+            
             if (controller is IInitialization initializeController)
             {
                 _initializeControllers.Add(initializeController);
@@ -40,6 +44,32 @@ namespace TeamBlue_Asteroids
             }
 
             return this;
+        }
+        
+        internal void Remove(IController controller)
+        {
+            if (controller is IRemoveFromControllers controllerToRemove)
+                controllerToRemove.PlayerRemoved -= Remove;
+            
+            if (controller is IInitialization initializeController)
+            {
+                _initializeControllers.Remove(initializeController);
+            }
+
+            if (controller is IExecute executeController)
+            {
+                _executeControllers.Remove(executeController);
+            }
+
+            if (controller is ILateExecute lateExecuteController)
+            {
+                _lateControllers.Remove(lateExecuteController);
+            }
+            
+            if (controller is IFixedExecute fixedController)
+            {
+                _fixedControllers.Remove(fixedController);
+            }
         }
         
         public void Initialization()
@@ -73,5 +103,7 @@ namespace TeamBlue_Asteroids
                 _fixedControllers[index].FixedExecute(deltaTime);         
             }
         }
+        
+        
     }
 }

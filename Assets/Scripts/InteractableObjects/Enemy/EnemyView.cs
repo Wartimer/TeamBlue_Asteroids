@@ -9,7 +9,6 @@ namespace TeamBlue_Asteroids
         internal event Action<EnemyView> EnemyDead;
         
         private float _speed;
-        private float _rotationSpeed;
         private int _hitPoints;
         private int _damage;
         [SerializeField] private EnemyModel _enemyModel;
@@ -23,19 +22,6 @@ namespace TeamBlue_Asteroids
         {
             Move(time);
         }
-
-        public void TakeDamage(int amount)
-        {
-            if (_hitPoints > 0)
-                _hitPoints -= amount;
-            if (_hitPoints <= 0)
-                Dispose();
-        }
-        
-        protected override void Interaction()
-        {
-            
-        }
         
         public void Move(float time)
         {
@@ -47,14 +33,37 @@ namespace TeamBlue_Asteroids
             EnemyModelInit();
         }
 
+        protected override void OnTriggerEnter(Collider other)
+        {
+            base.OnTriggerEnter(other);
+            if (!other.gameObject.CompareTag("Player")) return;
+            other.gameObject.GetComponent<PlayerView>().TakeDamage(_damage);
+            Dispose();
+        }
+
+        protected override void Interaction()
+        {
+            
+            _player.TakeDamage(_damage);
+            
+        }
+        
+        public void TakeDamage(int amount)
+        {
+            if (_hitPoints > 0)
+                _hitPoints -= amount;
+            if (_hitPoints <= 0)
+                Dispose();
+        }
+        
+
         protected virtual void EnemyModelInit()
         {
             _speed = _enemyModel.Speed;
             _hitPoints = _enemyModel.HitPoints;
-            _damage = _enemyModel.Damage;         
-            _collider = GetComponent<Collider>();
+            _damage = _enemyModel.Damage;
         }
-
+        
         public override void Dispose()
         {
             EnemyDead?.Invoke(this);

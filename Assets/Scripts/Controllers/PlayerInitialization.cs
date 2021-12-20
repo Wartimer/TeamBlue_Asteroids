@@ -10,7 +10,7 @@ namespace TeamBlue_Asteroids
         internal PlayerInitialization(PlayerFactory playerFactory, PlayerType type)
         {
             _playerFactory = playerFactory;
-            _player = playerFactory.CreatePlayer(type);
+            _player = playerFactory.CreatePlayer(type).GetComponent<PlayerView>();
         }
         
         public void Initialization()
