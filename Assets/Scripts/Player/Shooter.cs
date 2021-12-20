@@ -13,7 +13,6 @@ namespace TeamBlue_Asteroids
         private PlayerView _player;
         private EnemyScanner _enemyScanner;
         private SoundFactory _soundFactory;
-        private AudioClip _audioClip;
 
         internal Shooter(PlayerView player, MissilesContainer movingMissiles, EnemyScanner enemyScanner, RocketPool rocketPool, SoundFactory soundFactory)
         {
@@ -22,7 +21,6 @@ namespace TeamBlue_Asteroids
             _enemyScanner = enemyScanner;
             _rocketPool = rocketPool;
             _soundFactory = soundFactory;
-            _audioClip = _soundFactory.GetSound(SoundsType.HittingAnEnemyAsteroidSound);
         }
         
         
@@ -40,8 +38,7 @@ namespace TeamBlue_Asteroids
                 _movingMissiles.AddMissile(obj.GetComponent<MissileView>());
                 obj.GetComponent<MissileView>().MissileDestroyed += Destroy;
                 _firstShot = 0f;
-                
-           }   
+            }   
             
         }
         

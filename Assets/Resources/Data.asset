@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ece574f37754b58880a0a1f73b11e4f, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  _playerModelPath: PlayerModels/PlayerTitaniumFighter
   _enemyDataPath: EnemyData
   _playerDataPath: PlayerData
+  _playerModelPath: PlayerModels/PlayerTitaniumFighter
+  _soundsPath: SoundsData
   _stage01Path: Prefabs/Stages/Stage01
   _background01: Prefabs/Background/Background01
   _background02: Prefabs/Background/Background02
   _stars01: Prefabs/Stars/Stars01
   _rocket01: Prefabs/Missiles/Rocket
   _explosionPath: Prefabs/Effects/Explosion
-  _soundsPath: SoundsData

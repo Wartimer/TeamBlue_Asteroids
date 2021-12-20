@@ -25,6 +25,7 @@ namespace TeamBlue_Asteroids
         
         private void PlayerInit()
         {
+            _audioSource = GetComponent<AudioSource>();
             _stats.Health = _playerModel.HitPoints;
             _stats.Armour = _playerModel.Armour;
         }
@@ -42,12 +43,6 @@ namespace TeamBlue_Asteroids
             PlayerDestroyed?.Invoke();
             Destroy(gameObject);
         }
-        
-        private void Awake()
-        {
-            _audioSource = GetComponent<AudioSource>();
-        }
-
 
         internal void PlaySound()
         {

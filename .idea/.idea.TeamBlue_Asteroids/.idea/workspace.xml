@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Shooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Shooter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
