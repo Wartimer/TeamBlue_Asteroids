@@ -6,10 +6,12 @@ namespace TeamBlue_Asteroids
     public class Data : ScriptableObject
     {
         [Header("Data paths")]
-        [SerializeField] private string _playerModelPath;
         [SerializeField] private string _enemyDataPath;
         [SerializeField] private string _playerDataPath;
 
+        [Space][Header("Models paths")]
+        [SerializeField] private string _playerModelPath;
+        
         [Space] [Header("Sounds Paths")]
         [SerializeField] private string _soundsPath;
 

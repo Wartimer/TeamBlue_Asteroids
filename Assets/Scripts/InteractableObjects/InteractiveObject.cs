@@ -8,7 +8,8 @@ namespace TeamBlue_Asteroids
 
         private bool _isInteractable;
         protected Rigidbody _rigidBody;
-        protected Collider _collider;
+        protected PlayerView _player;
+        
         protected bool IsInteractable
         {
             get => _isInteractable;
@@ -24,16 +25,10 @@ namespace TeamBlue_Asteroids
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (!IsInteractable || !other.CompareTag("Player")) return;
-            Interaction();
-            IsInteractable = false;
-            Dispose();
-        }
-        
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Boundaries"))
+            if (other.gameObject.CompareTag("Boundaries"))
+            {
                 Dispose();
+            }
         }
 
         public virtual void Dispose()

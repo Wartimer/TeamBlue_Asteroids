@@ -1,10 +1,14 @@
 
+using System;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class PlayerMoveController : IFixedExecute, ICleanup
+    internal sealed class PlayerMoveController : IFixedExecute, ICleanup, IRemoveFromControllers
     {
+        public event Action<IController> PlayerRemoved;
+        
+        
         private readonly float _speed;
         private float _horizontal;
         private readonly PlayerView _player;
@@ -27,6 +31,7 @@ namespace TeamBlue_Asteroids
             
             _horizontalInputProxy = horizontalInputProxy;
             _horizontalInputProxy.AxisChange += OnHorizontalAxisChange;
+            _player.PlayerDestroyed += Cleanup;
         }
 
         private void OnHorizontalAxisChange(float value)
@@ -37,7 +42,6 @@ namespace TeamBlue_Asteroids
         public void FixedExecute(float deltatime)
         {
             var speed = deltatime * _speed;
-            //Debug.Log($"Speed: {speed}, Horizontal: {_horizontal}");
             _acceleration.Set(_horizontal * speed, 0.0f, 0.0f);
             _playerRigidbody.AddForce(_acceleration, ForceMode.Impulse);
         }
@@ -56,8 +60,11 @@ namespace TeamBlue_Asteroids
         
         public void Cleanup()
         {
+            _player.PlayerDestroyed -= Cleanup;
             _horizontalInputProxy.AxisChange -= OnHorizontalAxisChange;
+            PlayerRemoved?.Invoke(this);
         }
+
     }
 }
 

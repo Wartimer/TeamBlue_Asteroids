@@ -87,7 +87,9 @@ namespace TeamBlue_Asteroids
 
         public void Dispose()
         {
-            _route.gameObject.GetComponent<Route>().Dispose();
+            Route route;
+            if(_route.gameObject.TryGetComponent<Route>(out route))
+                route.Dispose();
             MissileDestroyed?.Invoke(this);
         }
 
@@ -106,27 +108,17 @@ namespace TeamBlue_Asteroids
             }
             
             if (transform.position.y >= _p3.y) _onStartingRoute = false;
-            
-            
-            
-            
-            
-                if (_target)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, _target.position,  _toTargetSpeed * deltaTime );
-                    //transform.localPosition += Vector3.forward * _toTargetSpeed * deltaTime;
-                    transform.LookAt(_target);
-                    
-                }
-                else
-                {
-                     transform.Translate(_forward * _toTargetSpeed * deltaTime);
-                }
-            
-           
-            // if(transform.position.z > _p3.z && _target == null)
-            //     transform.Translate(_forward * _toTargetSpeed * deltaTime);
 
+            if (_target)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, _target.position,  _toTargetSpeed * deltaTime );
+                transform.LookAt(_target);
+                
+            }
+            else
+            {
+                 transform.Translate(_forward * _toTargetSpeed * deltaTime);
+            }
         }
 
         internal void GetPoints()
@@ -135,11 +127,6 @@ namespace TeamBlue_Asteroids
             _p1 = _route.GetChild(1).position;
             _p2 = _route.GetChild(2).position;
             _p3 = _route.GetChild(3).position;
-            
-            Debug.Log($"{_p0}");
-            Debug.Log($"{_p1}");
-            Debug.Log($"{_p2}");
-            Debug.Log($"{_p3}");
         }
 
         private void FollowRoute(float deltaTime)
@@ -153,7 +140,7 @@ namespace TeamBlue_Asteroids
             
             //transform.LookAt(_missilePosition);
             transform.position = _missilePosition;
-            Debug.Log($"{_missilePosition}");
+            //Debug.Log($"{_missilePosition}");
             
         }
 

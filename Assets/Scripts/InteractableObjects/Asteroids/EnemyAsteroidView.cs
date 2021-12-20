@@ -10,7 +10,7 @@ namespace TeamBlue_Asteroids
     {
         private float _rotationSpeed;
 
-        public void Rotation(float time)
+        private void Rotation(float time)
         {
             transform.Rotate(Vector3.up * (time * _rotationSpeed),
                 Space.World);
@@ -29,7 +29,6 @@ namespace TeamBlue_Asteroids
             base.EnemyModelInit();
             _rotationSpeed = Random.Range(-20, 20);
         }
-
 
     }
 }

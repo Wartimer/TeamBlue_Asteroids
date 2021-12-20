@@ -11,7 +11,7 @@ namespace UnityTemplateProjects.UserInput
         public void GetAxis()
         {
             Debug.Log("InGetAxis Method");
-            AxisChange.Invoke(Input.GetAxis(AxisManager.HORIZONTAL));
+            AxisChange?.Invoke(Input.GetAxis(AxisManager.HORIZONTAL));
         }
     }
 }

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
     internal class PlayerFactory : IPlayerFactory
@@ -9,9 +11,9 @@ namespace TeamBlue_Asteroids
             _data = data;
         }
         
-        public PlayerView CreatePlayer(PlayerType type)
+        public GameObject CreatePlayer(PlayerType type)
         {
-            return _data.GetPlayer(type).AddComponent<PlayerView>();
+             return _data.GetPlayer(type);
         }
     }
 }
