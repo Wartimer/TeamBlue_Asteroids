@@ -9,5 +9,6 @@ namespace TeamBlue_Asteroids
         PlayerShotSound = 4,
         EndGameSound = 5,
         BackgroundSound = 6,
+        RocketFlight = 7
     }
 }

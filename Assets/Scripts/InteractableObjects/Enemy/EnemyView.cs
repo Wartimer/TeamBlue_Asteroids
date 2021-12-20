@@ -13,7 +13,7 @@ namespace TeamBlue_Asteroids
         private int _hitPoints;
         private int _damage;
         [SerializeField] private EnemyModel _enemyModel;
-
+        
         internal EnemyModel Model
         {
             set => _enemyModel = value;
@@ -28,6 +28,7 @@ namespace TeamBlue_Asteroids
         {
             if (_hitPoints > 0)
                 _hitPoints -= amount;
+            
             if (_hitPoints <= 0)
                 Dispose();
         }

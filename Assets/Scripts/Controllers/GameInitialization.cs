@@ -36,9 +36,9 @@ namespace TeamBlue_Asteroids
             var missilesContainer = new MissilesContainer();
             var missileFactory = new MissileFactory(data);
             var routeFactory = new RouteFactory(playerInitialization.GetPlayer().transform, routeData);
-            var rocketPool = new RocketPool(playerInitialization.GetPlayer().transform, missileFactory, routeFactory);
+            var rocketPool = new RocketPool(playerInitialization.GetPlayer().transform, missileFactory, routeFactory, soundFactory);
             var enemyScanner = new EnemyScanner(playerInitialization.GetPlayer().transform);
-            var shooter = new Shooter(playerInitialization.GetPlayer(), missilesContainer, enemyScanner, rocketPool );
+            var shooter = new Shooter(playerInitialization.GetPlayer(), missilesContainer, enemyScanner, rocketPool, soundFactory);
             
             //Добавление в Инициализирующие контроллеры
             // controllers.Add(backGroundInitialization);
