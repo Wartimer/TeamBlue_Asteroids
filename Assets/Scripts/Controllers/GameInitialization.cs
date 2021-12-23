@@ -56,6 +56,7 @@ namespace TeamBlue_Asteroids
                 data.PlayerTitaniumFighter, camera));
             controllers.Add(new MissilesMoveController(missilesContainer));
             controllers.Add(new PlayerShootController(playerInitialization.GetPlayer(), shooter, enemyScanner));
+            controllers.Add(new PlayerAnimationController(playerInitialization.GetPlayer()));
         }
     }
 }
