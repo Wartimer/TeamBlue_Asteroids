@@ -12,7 +12,7 @@ namespace TeamBlue_Asteroids
         
         private AudioSource _audioSource;
         private AudioClip _shootSound;
-
+        
         internal AudioClip Sound
         {
             set => _shootSound = value;
@@ -22,7 +22,8 @@ namespace TeamBlue_Asteroids
         {
             PlayerInit();
         }
-        
+     
+
         private void PlayerInit()
         {
             _audioSource = GetComponent<AudioSource>();
