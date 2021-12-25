@@ -26,7 +26,7 @@ namespace TeamBlue_Asteroids
                 throw new InvalidOperationException($"Prefab of UI type {Type} not found");
             }
 
-            return uiPrefab.gameObject;            
+            return uiPrefab.gameObject;    
         }
     }
 }

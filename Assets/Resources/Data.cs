@@ -15,6 +15,9 @@ namespace TeamBlue_Asteroids
         [Space] [Header("Sounds Paths")]
         [SerializeField] private string _soundsPath;
 
+        [Space] [Header("UI path")] 
+        [SerializeField] private string _uiPath;
+
 
         [Space] [Header("Stage Objects Paths")] 
         [SerializeField] private string _stage01Path;
@@ -27,8 +30,32 @@ namespace TeamBlue_Asteroids
         [Space] [Header("Particles Paths")] 
         [SerializeField] private string _explosionPath;
 
-        
+        [Space] [Header("GameLoop Path")] 
+        [SerializeField] private string _gameLoopPath;
 
+        private Canvas _canvas;
+
+
+        internal Transform Canvas
+        {
+            get
+            {
+                var canvas = FindObjectOfType<Canvas>();
+                return canvas.transform;
+            }
+        }
+        
+        
+        internal GameObject GameLoop
+        {
+            get
+            {
+                var gameLoop = Resources.Load<GameObject>("Data/" + _gameLoopPath);
+                Instantiate(gameLoop);
+                return gameLoop;
+            }
+        }
+        
         internal GameObject Stage01
         {
             get
@@ -94,5 +121,7 @@ namespace TeamBlue_Asteroids
         internal PlayerModel PlayerTitaniumFighter => Resources.Load<PlayerModel>("Data/" + _playerModelPath);
 
         internal SoundsData SoundsData => Resources.Load<SoundsData>("Data/" + _soundsPath);
+
+        internal UIData UIData => Resources.Load<UIData>("Data/" + _uiPath);
     }
 }
