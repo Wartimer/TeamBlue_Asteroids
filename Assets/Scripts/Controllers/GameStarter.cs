@@ -16,6 +16,7 @@ namespace TeamBlue_Asteroids
         private MainMenuView _mainMenuView;
 
         internal Controllers Controllers => _controllers;
+        internal Data Data => _data;
         
         private void Start()
         {

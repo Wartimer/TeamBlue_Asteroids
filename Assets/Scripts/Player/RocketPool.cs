@@ -42,13 +42,13 @@ namespace TeamBlue_Asteroids
             else
             {
                 missile = _stack.Pop().gameObject;
-                _currentMissile.Sound = _soundFactory.GetSound(SoundsType.RocketFlight);
-                _currentMissile.PlayAsteroidSound();
+                missile.GetComponent<MissileView>().Sound = _soundFactory.GetSound(SoundsType.RocketFlight);
 
             }
+            
 
+            missile.gameObject.SetActive(true);
             _currentMissile = missile.GetComponent<MissileView>();
-            _currentMissile.gameObject.SetActive(true);
             _routePosition = _root.position;
             var route = _routeFactory.CreateRoute(rnd, _routePosition);
             _currentMissile.Route = route;

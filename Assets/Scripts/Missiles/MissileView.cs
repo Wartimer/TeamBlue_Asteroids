@@ -55,7 +55,7 @@ namespace TeamBlue_Asteroids
             set => _route = value;
         }
 
-        internal void PlayAsteroidSound()
+        private void PlaySound()
         {
             _audioSource.PlayOneShot(_asteroidShoot);
         }
@@ -66,7 +66,6 @@ namespace TeamBlue_Asteroids
             _forward = transform.TransformDirection(Vector3.down);
             _trail = GetComponentInChildren<TrailRenderer>();
             _audioSource = GetComponent<AudioSource>();
-            
         }
         
 
@@ -95,6 +94,7 @@ namespace TeamBlue_Asteroids
 
         private void OnEnable()
         {
+            PlaySound();
             _onStartingRoute = true;
             _trail.Clear();
             _time = 0f;
@@ -138,9 +138,7 @@ namespace TeamBlue_Asteroids
                                3 * (1 - _time) * Mathf.Pow(_time, 2) * _p2 +
                                Mathf.Pow(_time, 3) * _p3;
             
-            //transform.LookAt(_missilePosition);
             transform.position = _missilePosition;
-            //Debug.Log($"{_missilePosition}");
             
         }
 
