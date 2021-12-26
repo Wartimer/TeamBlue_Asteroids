@@ -6,6 +6,5 @@ namespace TeamBlue_Asteroids
     public interface IUserKeyInputProxy
     {
         event Action<KeyCode> KeyPressed;
-        void GetKey();
     }
 }
