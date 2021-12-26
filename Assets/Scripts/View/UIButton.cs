@@ -9,7 +9,7 @@ namespace TeamBlue_Asteroids
     {
         public event Action UIButtonClick;
         
-        public void OnPointerClick(PointerEventData eventData)
+        public virtual void OnPointerClick(PointerEventData eventData)
         {
             UIButtonClick?.Invoke();
         }

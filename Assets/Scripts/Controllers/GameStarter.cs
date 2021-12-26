@@ -24,7 +24,6 @@ namespace TeamBlue_Asteroids
             _mainMenu = Instantiate(_data.UIData.CreateUiElement(UiType.MainMenu), _data.Canvas);
             _mainMenuView = new MainMenuView(_mainMenu);
             _mainMenuView.StartGameButton.UIButtonClick += StartGame;
-            _mainMenuView.QuitGameButton.UIButtonClick += QuitGame;
         }
 
         private void StartGame()
@@ -33,16 +32,6 @@ namespace TeamBlue_Asteroids
             new GameInitialization(_controllers, _data, _routeData);
             _controllers.Initialization();
             GameInitialized?.Invoke();
-        }
-
-        private void QuitGame()
-        {
-            _mainMenuView.QuitGameButton.UIButtonClick -= QuitGame;
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
         }
 
         private void StartGameLoop()

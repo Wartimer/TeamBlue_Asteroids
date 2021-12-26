@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UserInput;
 
 namespace TeamBlue_Asteroids
 {
@@ -10,6 +11,7 @@ namespace TeamBlue_Asteroids
         private void Awake()
         {
             _controllers = FindObjectOfType<GameStarter>().Controllers;
+            
         }
 
         private void Update()

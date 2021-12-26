@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitpoints: 150
   _damage: 300
-  _speed: 0.5
+  _speed: 1
   _rotationSpeed: 1

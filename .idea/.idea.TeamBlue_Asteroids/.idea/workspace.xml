@@ -3,8 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="c3ddc9a8-810d-4446-bdcb-f909986e123e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeamBlue_Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInitialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Menu_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Menu_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Large.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Medium.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Medium.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Small.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/AsteroidModel_Small.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/ShipModel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/EnemyModels/ShipModel.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/PlayerIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Player/PlayerIdle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Ui/PauseMenuButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Prefabs/Ui/PauseMenuButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameStarter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameStarter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUserKeyInputProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUserKeyInputProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInput/PCInputKeyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInput/PCInputKeyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/View/QuitGameButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/View/QuitGameButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/View/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/View/UIButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +105,7 @@
       <workItem from="1638298216922" duration="124639000" />
       <workItem from="1638806415193" duration="78745000" />
       <workItem from="1639003151386" duration="12999000" />
-      <workItem from="1640165709430" duration="24179000" />
+      <workItem from="1640165709430" duration="26508000" />
     </task>
     <servers />
   </component>
