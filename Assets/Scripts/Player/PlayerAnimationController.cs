@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class PlayerAnimationController : IFixedExecute, ICleanup
+    internal sealed class PlayerAnimationController : IFixedExecute, ICleanup, IRemoveFromControllers
     {
         public event Action<IController> PlayerRemoved;
         
@@ -35,6 +35,7 @@ namespace TeamBlue_Asteroids
         {
             
             _animator.SetFloat(Turn, _horizontal);
+            
             /*if (Input.GetKey(KeyCode.A))
             {
                 _animator.SetFloat("Turn", -1);
