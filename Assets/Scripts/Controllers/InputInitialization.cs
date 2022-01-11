@@ -8,6 +8,8 @@ namespace TeamBlue_Asteroids
         private IUserKeyInput _pcKeyInput;
 
         internal IUserInputProxy PCInputHorizontal => _pcInputHorizontal;
+        internal IUserKeyInput PCKeyInput => _pcKeyInput;
+        
         internal InputInitialization()
         {
             _pcInputHorizontal = new PCInputHorizontal();

@@ -7,13 +7,13 @@ namespace TeamBlue_Asteroids
 {
     internal class UIFactory : IUIFactory
     {
-        private readonly UIData _uiData;
         private readonly Data _data;
+        private readonly UIData _uiData;
 
-        internal UIFactory(UIData uiData, Data data)
+        internal UIFactory(Data data)
         {
-            _uiData = uiData;
             _data = data;
+            _uiData = _data.UIData;
         }
         
         public GameObject CreateUiElement(UiType type)

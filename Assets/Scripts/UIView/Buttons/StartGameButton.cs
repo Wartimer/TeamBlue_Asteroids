@@ -1,6 +1,6 @@
 namespace TeamBlue_Asteroids
 {
-    public class StartGameButton : UIButton
+    internal sealed class StartGameButton : UIButton
     {
         
     }

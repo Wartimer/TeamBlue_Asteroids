@@ -5,7 +5,8 @@ namespace TeamBlue_Asteroids
     {
         GameOverDisplay = 0,
         MainMenu = 1,
-        PauseMenu = 2
+        PauseMenu = 2,
+        SettingsMenu = 3
     }
 
 }

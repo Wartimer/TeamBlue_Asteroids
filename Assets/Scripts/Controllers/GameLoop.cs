@@ -9,8 +9,10 @@ namespace TeamBlue_Asteroids
 
         private Data _data;
         private GameStarter _gameStarter;
-        private PauseMenuView _pauseMenu;
-        private UIFactory _uiFactory;
+        private UIController _uiController;
+        private Reference _reference;
+
+        private IUserKeyInput _keyInput;
 
         private bool _gamePaused;
         
@@ -20,14 +22,15 @@ namespace TeamBlue_Asteroids
             _gameStarter = FindObjectOfType<GameStarter>();
             _data = _gameStarter.Data;
             _controllers = _gameStarter.Controllers;
-            _uiFactory = new UIFactory(_data.UIData, _data);
+            _uiController = _gameStarter.UIController;
+            _reference = _gameStarter.Reference;
+            _keyInput = _reference.PCKeyIput;
         }
 
         private void Start()
         {
-            _pauseMenu = new PauseMenuView(_uiFactory.CreateUiElement(UiType.PauseMenu));
-            _pauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
-            _pauseMenu.Hide();
+            _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
+            _keyInput.KeyPressed += OnKeyPressed;
         }
 
         private void Update()
@@ -46,44 +49,31 @@ namespace TeamBlue_Asteroids
 
         private void FixedUpdate()
         {
-            
+            if (_gamePaused) return;
             var deltaTime = Time.deltaTime;
             _controllers.FixedExecute(deltaTime);
         }
 
-        // private void OnKeyPressed(KeyCode key)
-        // {
-        //     switch (key)
-        //     {
-        //         case KeyCode.P:
-        //             ShowUiElement(_pauseMenu);
-        //             _gamePaused = true;
-        //             break;
-        //     }
-        // }
-        //
-        //
-        // private void ShowUiElement(IUIView view)
-        // {
-        //     view.Show();
-        // }
-        //
-        // private void HideUIElement(IUIView view)
-        // {
-        //     view.Hide();
-        // }
+        private void OnKeyPressed(string key)
+        {
+            switch (key)
+            {
+                case "PAUSE":
+                    _uiController.PauseMenu.Show();
+                    _gamePaused = true;
+                    break;
+            }
+        }
         
-        
-
         private void OnContinueButtonClick()
         {
+            _uiController.PauseMenu.Hide();
             _gamePaused = false;
-            _pauseMenu.Hide();
         }
 
         public void Dispose()
         {
-            _pauseMenu.ContinueButton.UIButtonClick -= OnContinueButtonClick;
+            _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
         }
     }
 }
