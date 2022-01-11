@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDataPath: EnemyData
   _playerDataPath: PlayerData
+  _routeDataPath: RocketRouteData
   _playerModelPath: PlayerModels/PlayerTitaniumFighter
   _soundsPath: SoundsData
   _uiPath: UIData

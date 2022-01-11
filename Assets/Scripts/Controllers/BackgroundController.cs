@@ -12,13 +12,18 @@ namespace TeamBlue_Asteroids
         {
             _stageBackgroundViews = Object.FindObjectsOfType<StageBackgroundView>().ToList();
         }
+        
         public void Execute(float deltaTime)
         {
             foreach (var background in _stageBackgroundViews)
             {
                 background.Execute(deltaTime);
-                
             }
+        }
+
+        internal void AddBackground(StageBackgroundView bg)
+        {
+            _stageBackgroundViews.Add(bg);
         }
     }
 }

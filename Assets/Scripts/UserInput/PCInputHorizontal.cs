@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityTemplateProjects.UserInput
 {
-    internal sealed class PCInputHorizontal : IUserInputProxy
+    internal sealed class PCInputHorizontal : IUserInputProxy, IExecute
     {
         public event Action<float> AxisChange;
         
@@ -12,6 +12,11 @@ namespace UnityTemplateProjects.UserInput
         {
             Debug.Log("InGetAxis Method");
             AxisChange?.Invoke(Input.GetAxis(AxisManager.HORIZONTAL));
+        }
+
+        public void Execute(float time)
+        {
+            GetAxis();
         }
     }
 }

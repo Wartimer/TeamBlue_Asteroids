@@ -8,21 +8,21 @@ namespace TeamBlue_Asteroids
         public event Action<IController> PlayerRemoved;
         
         private Shooter _shooter;
-        private EnemyScanner _enemyScanner;
         private PlayerView _player;
+        private IUserKeyInput _keyInput;
         
-        internal PlayerShootController(PlayerView player, Shooter shooter, EnemyScanner enemyScanner)
+        internal PlayerShootController(PlayerView player, Shooter shooter, IUserKeyInput keyInput)
         {
             _shooter = shooter;
-            _enemyScanner = enemyScanner;
             _player = player;
+            _keyInput = keyInput;
             _player.PlayerDestroyed += Cleanup;
         }
         
-        public void Execute(float time)
+        public void Execute(float deltaTime)
         {
-            _shooter.Shoot(time);           
-            _enemyScanner.ScanTargets(time);
+            if(_keyInput.GetKey() == "FIRE")
+                _shooter.Shoot(deltaTime);
         }
 
         public void Cleanup()

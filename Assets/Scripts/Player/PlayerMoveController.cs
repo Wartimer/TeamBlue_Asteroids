@@ -12,7 +12,6 @@ namespace TeamBlue_Asteroids
         private readonly float _speed;
         private float _horizontal;
         private readonly PlayerView _player;
-        private readonly PlayerModel _playerModel; 
         private IUserInputProxy _horizontalInputProxy;
         private Vector3 _move;
         private Camera _mainCamera;
@@ -22,14 +21,11 @@ namespace TeamBlue_Asteroids
         public PlayerMoveController(IUserInputProxy horizontalInputProxy, PlayerView player, PlayerModel playerModel,
             Camera mainCamera)
         {
-            _player = player;
-            _playerModel = playerModel;
-            _mainCamera = mainCamera;
-            
-            _speed = _playerModel.Speed;
-            _playerRigidbody = _player.gameObject.GetComponent<Rigidbody>();
-            
             _horizontalInputProxy = horizontalInputProxy;
+            _player = player;
+            _mainCamera = mainCamera;
+            _speed = playerModel.Speed;
+            _playerRigidbody = _player.gameObject.GetComponent<Rigidbody>();
             _horizontalInputProxy.AxisChange += OnHorizontalAxisChange;
             _player.PlayerDestroyed += Cleanup;
         }
@@ -39,9 +35,9 @@ namespace TeamBlue_Asteroids
             _horizontal = value;
         }
 
-        public void FixedExecute(float deltatime)
+        public void FixedExecute(float deltaTime)
         {
-            var speed = deltatime * _speed;
+            var speed = deltaTime * _speed;
             _acceleration.Set(_horizontal * speed, 0.0f, 0.0f);
             _playerRigidbody.AddForce(_acceleration, ForceMode.Impulse);
         }

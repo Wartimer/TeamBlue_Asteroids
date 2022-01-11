@@ -1,18 +1,25 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class ExplosionSpawnController : IExecute
+    internal sealed class ExplosionSpawnController : IInitialization, IExecute, IDisposable
     {
-        private readonly EffectsPool _effectsPool;
-        private List<EffectView> _explosions; 
-        
-        internal ExplosionSpawnController(EffectsPool effectsPool)
+        private readonly Data _data;
+        private EffectFactory _effectFactory;
+        private EffectsPool _effectsPool;
+        private List<EffectView> _explosions;
+        private InteractiveObjectsController _interObjsController;
+
+        internal ExplosionSpawnController(Data data, InteractiveObjectsController interObjsController)
         {
-            _effectsPool = effectsPool;
+            _data = data;
+            _interObjsController = interObjsController;
+            _interObjsController.EnemyRemoved += SpawnExplosion;
+            _effectFactory = new EffectFactory(_data);
+            _effectsPool = new EffectsPool(_effectFactory);
             _explosions = new List<EffectView>();
         }
 
@@ -35,6 +42,15 @@ namespace TeamBlue_Asteroids
             {
                 explosion.CheckState(deltaTime);
             }
+        }
+
+        public void Initialization()
+        {
+        }
+
+        public void Dispose()
+        {
+            _interObjsController.EnemyRemoved -= SpawnExplosion;
         }
     }
 }
