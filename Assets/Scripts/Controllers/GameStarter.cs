@@ -10,7 +10,6 @@ namespace TeamBlue_Asteroids
         public event Action GameInitialized;
         
         [SerializeField] private Data _data;
-        [SerializeField] private RouteData _routeData;
         private Controllers _controllers;
         private GameObject _mainMenu;
         private MainMenuView _mainMenuView;
@@ -30,7 +29,7 @@ namespace TeamBlue_Asteroids
         private void StartGame()
         {
             _mainMenuView.StartGameButton.UIButtonClick -= StartGame;
-            new GameInitialization(_controllers, _data, _routeData);
+            new GameInitialization(_controllers, _data);
             _controllers.Initialization();
             GameInitialized?.Invoke();
         }

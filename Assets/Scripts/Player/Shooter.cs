@@ -1,4 +1,3 @@
-using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
@@ -11,14 +10,12 @@ namespace TeamBlue_Asteroids
         private MissilesContainer _movingMissiles;
 
         private PlayerView _player;
-        private EnemyScanner _enemyScanner;
         private SoundFactory _soundFactory;
 
-        internal Shooter(PlayerView player, MissilesContainer movingMissiles, EnemyScanner enemyScanner, RocketPool rocketPool, SoundFactory soundFactory)
+        internal Shooter(PlayerView player, MissilesContainer movingMissiles, RocketPool rocketPool, SoundFactory soundFactory)
         {
             _player = player;
             _movingMissiles = movingMissiles;
-            _enemyScanner = enemyScanner;
             _rocketPool = rocketPool;
             _soundFactory = soundFactory;
         }
@@ -33,20 +30,17 @@ namespace TeamBlue_Asteroids
                 _player.Sound = _soundFactory.GetSound(SoundsType.PlayerShotSound);
                 _player.PlaySound();
                 var obj = _rocketPool.Pop();
-                obj.GetComponent<MissileView>().Target = _enemyScanner.CurrentTarget;
                 obj.GetComponent<MissileView>().GetPoints();
                 _movingMissiles.AddMissile(obj.GetComponent<MissileView>());
                 obj.GetComponent<MissileView>().MissileDestroyed += Destroy;
                 _firstShot = 0f;
-            }   
-            
+            }
         }
         
         private bool CanShoot()
         {
-            return _enemyScanner.State == ScanState.STOP 
-                    && (_firstShot > _repeatRate) 
-                    && _enemyScanner.TargetSet;
+            return
+                (_firstShot > _repeatRate);
 
         }
 

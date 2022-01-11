@@ -5,13 +5,14 @@ namespace TeamBlue_Asteroids
     public class BackGroundInitialization : IInitialization
     {
         private readonly BackgroundFactory _backgroundFactory;
-        private GameObject _background;
+        private GameObject _backgroundFast;
+        private GameObject _backgroundSlow;
 
         internal BackGroundInitialization(BackgroundFactory backgroundFactory)
         {
             _backgroundFactory = backgroundFactory;
-            _background = backgroundFactory.CreateBackground(BgType.FastBg);
-            _background = backgroundFactory.CreateBackground(BgType.SlowBG);
+            _backgroundFast = backgroundFactory.CreateBackground(BgType.FastBg);
+            _backgroundSlow = backgroundFactory.CreateBackground(BgType.SlowBG);
         }
         
         public void Initialization()
@@ -19,9 +20,14 @@ namespace TeamBlue_Asteroids
             
         }
 
-        internal GameObject GetBackground()
+        internal GameObject GetBackgroundFast()
         {
-            return _background;
+            return _backgroundFast;
+        }
+
+        internal GameObject GetBackGroundSlow()
+        {
+            return _backgroundSlow;
         }
     }
 }

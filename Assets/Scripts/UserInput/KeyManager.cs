@@ -1,9 +1,12 @@
 using UnityEngine;
 
-namespace UserInput
+namespace TeamBlue_Asteroids
 {
     internal static class KeyManager
     {
-        internal const KeyCode Pause = KeyCode.P;
+        internal const string PAUSE = "PAUSE";
+
+        internal const string FIRE = "FIRE";
+
     }
 }

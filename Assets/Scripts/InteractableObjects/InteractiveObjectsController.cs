@@ -1,16 +1,18 @@
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
     internal class InteractiveObjectsController : IFixedExecute
     {
+        internal event Action<Vector3> EnemyRemoved;
+        
         private List<EnemyView> _executeObjects;
-        private ExplosionSpawnController _explosionSpawnController;
-
-        internal InteractiveObjectsController(ExplosionSpawnController explosionSpawnController)
+        
+        internal InteractiveObjectsController()
         {
             _executeObjects = new List<EnemyView>();
-            _explosionSpawnController = explosionSpawnController;
         }
         
         public void FixedExecute(float time)
@@ -29,7 +31,7 @@ namespace TeamBlue_Asteroids
 
         private void RemoveObject(EnemyView obj)
         {
-            _explosionSpawnController.SpawnExplosion(obj.transform.position);   
+            EnemyRemoved?.Invoke(obj.transform.position);
             obj.EnemyDead -= RemoveObject;
             _executeObjects.Remove(obj);
         }

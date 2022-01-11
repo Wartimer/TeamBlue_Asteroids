@@ -109,16 +109,14 @@ namespace TeamBlue_Asteroids
             
             if (transform.position.y >= _p3.y) _onStartingRoute = false;
 
-            if (_target)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _target.position,  _toTargetSpeed * deltaTime );
-                transform.LookAt(_target);
-                
-            }
-            else
-            {
-                 transform.Translate(_forward * _toTargetSpeed * deltaTime);
-            }
+            // if (_target)
+            // {
+            //     transform.position = Vector3.MoveTowards(transform.position, _target.position,  _toTargetSpeed * deltaTime );
+            //     transform.LookAt(_target);
+            //     
+            // }
+            
+            transform.Translate(_forward * (_toTargetSpeed * deltaTime));
         }
 
         internal void GetPoints()

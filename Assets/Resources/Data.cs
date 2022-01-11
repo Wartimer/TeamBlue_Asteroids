@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
@@ -5,9 +6,12 @@ namespace TeamBlue_Asteroids
     [CreateAssetMenu(fileName = "Data", menuName = "Data/Data Paths", order = 51)]
     public class Data : ScriptableObject
     {
+        private const string _dataPath = "Data";
+        
         [Header("Data paths")]
         [SerializeField] private string _enemyDataPath;
         [SerializeField] private string _playerDataPath;
+        [SerializeField] private string _routeDataPath;
 
         [Space][Header("Models paths")]
         [SerializeField] private string _playerModelPath;
@@ -50,7 +54,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var gameLoop = Resources.Load<GameObject>("Data/" + _gameLoopPath);
+                var gameLoop = Resources.Load<GameObject>(Path.Combine(_dataPath,_gameLoopPath));
                 Instantiate(gameLoop);
                 return gameLoop;
             }
@@ -60,7 +64,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var stage = Resources.Load<GameObject>("Data/" + _stage01Path);
+                var stage = Resources.Load<GameObject>(Path.Combine(_dataPath, _stage01Path));
                 Instantiate(stage);
                 return stage;
             }
@@ -70,7 +74,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var background = Resources.Load<GameObject>("Data/" + _background01);
+                var background = Resources.Load<GameObject>(Path.Combine(_dataPath, _background01));
                 Instantiate(background);
                 return background;
             }
@@ -80,7 +84,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var background = Resources.Load<GameObject>("Data/" + _background02);
+                var background = Resources.Load<GameObject>(Path.Combine(_dataPath, _background02));
                 Instantiate(background);
                 return background;
             }
@@ -90,7 +94,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var stars = Resources.Load<GameObject>("Data/" + _stars01);
+                var stars = Resources.Load<GameObject>(Path.Combine(_dataPath,_stars01));
                 Instantiate(stars);
                 return stars;
             }
@@ -100,7 +104,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var rocket = Resources.Load<MissileView>("Data/" + _rocket01);
+                var rocket = Resources.Load<MissileView>(Path.Combine(_dataPath, _rocket01));
                 return rocket;
             }
         }
@@ -109,19 +113,21 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var explosion = Resources.Load<GameObject>("Data/" + _explosionPath);
+                var explosion = Resources.Load<GameObject>(Path.Combine(_dataPath,_explosionPath));
                 return explosion;
             }
         }
 
-        internal EnemyData EnemyData => Resources.Load<EnemyData>("Data/" + _enemyDataPath);
+        internal EnemyData EnemyData => Resources.Load<EnemyData>(Path.Combine(_dataPath,_enemyDataPath));
 
-        internal PlayerData PlayerData => Resources.Load<PlayerData>("Data/" + _playerDataPath);
+        internal PlayerData PlayerData => Resources.Load<PlayerData>(Path.Combine(_dataPath,_playerDataPath));
 
-        internal PlayerModel PlayerTitaniumFighter => Resources.Load<PlayerModel>("Data/" + _playerModelPath);
+        internal PlayerModel PlayerTitaniumFighter => Resources.Load<PlayerModel>(Path.Combine(_dataPath, _playerModelPath));
 
-        internal SoundsData SoundsData => Resources.Load<SoundsData>("Data/" + _soundsPath);
+        internal SoundsData SoundsData => Resources.Load<SoundsData>(Path.Combine(_dataPath,_soundsPath));
 
-        internal UIData UIData => Resources.Load<UIData>("Data/" + _uiPath);
+        internal UIData UIData => Resources.Load<UIData>(Path.Combine(_dataPath,_uiPath));
+        
+        internal RouteData RouteData => Resources.Load<RouteData>(Path.Combine(_dataPath, _routeDataPath));
     }
 }
