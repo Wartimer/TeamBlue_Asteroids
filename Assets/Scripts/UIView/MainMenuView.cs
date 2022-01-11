@@ -10,15 +10,12 @@ namespace TeamBlue_Asteroids
 
         internal UIButton StartGameButton => _startGameButton;
         internal UIButton QuitGameButton => _quitGameButton;
-
         internal UIButton SettingsButton => _settingButton;
-
         
         internal MainMenuView(GameObject element) : base(element)
         {
-            _startGameButton = element.GetComponentInChildren<StartGameButton>();
-            _quitGameButton = element.GetComponentInChildren<QuitGameButton>();
-            _settingButton = element.GetComponentInChildren<SettingsButton>();
+            _startGameButton = _uiElement.GetComponentInChildren<StartGameButton>();
+            _settingButton = _uiElement.GetComponentInChildren<SettingsButton>();
         }
     }
 }

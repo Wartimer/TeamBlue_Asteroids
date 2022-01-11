@@ -11,7 +11,13 @@ namespace TeamBlue_Asteroids
         
         public virtual void OnPointerClick(PointerEventData eventData)
         {
+            StartCoroutine(ClickDelay());
             UIButtonClick?.Invoke();
+        }
+        
+        protected IEnumerator ClickDelay()
+        {
+           yield return new WaitForSeconds(0.75f);
         }
     }
 }

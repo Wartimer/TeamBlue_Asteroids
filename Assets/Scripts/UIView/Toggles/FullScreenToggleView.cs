@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreenDisplay : MonoBehaviour
+public class FullScreenToggleView : MonoBehaviour
 {
     private bool isFullScreen;
 
-    public void FullScreenToogle()
+    public void FullScreenToggle()
     {
         isFullScreen = !isFullScreen;
         Screen.fullScreen = isFullScreen;

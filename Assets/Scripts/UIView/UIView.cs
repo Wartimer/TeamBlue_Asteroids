@@ -5,9 +5,10 @@ using Object = UnityEngine.Object;
 
 namespace TeamBlue_Asteroids
 {
-    internal class UIView : IUIView, IDisposable
+    public class UIView : IUIView, IDisposable
     {
-        private GameObject _uiElement;
+        protected GameObject _uiElement;
+        
         
 
         internal UIView(GameObject element)

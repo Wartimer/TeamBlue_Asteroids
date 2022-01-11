@@ -19,3 +19,5 @@ MonoBehaviour:
     gameObject: {fileID: 8417875875217957238, guid: 9bc0b54526d250842b148d99f145178a, type: 3}
   - Type: 2
     gameObject: {fileID: 7048321304508892692, guid: 6e45365fe6476804cb4b07b14eed71a6, type: 3}
+  - Type: 3
+    gameObject: {fileID: 1030704646178958946, guid: be4fadccae45e674a87ad96a333f8fb6, type: 3}

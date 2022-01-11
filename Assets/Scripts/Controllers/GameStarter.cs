@@ -10,26 +10,30 @@ namespace TeamBlue_Asteroids
         public event Action GameInitialized;
         
         [SerializeField] private Data _data;
+        private UIController _uiController;
         private Controllers _controllers;
-        private GameObject _mainMenu;
-        private MainMenuView _mainMenuView;
+        private Reference _reference;
 
-        internal Controllers Controllers => _controllers;
         internal Data Data => _data;
+        internal Controllers Controllers => _controllers;
+        internal UIController UIController => _uiController;
+        internal Reference Reference => _reference;
         
         private void Start()
         {
             GameInitialized += StartGameLoop;
             _controllers = new Controllers();
-            _mainMenu = Instantiate(_data.UIData.CreateUiElement(UiType.MainMenu), _data.Canvas);
-            _mainMenuView = new MainMenuView(_mainMenu);
-            _mainMenuView.StartGameButton.UIButtonClick += StartGame;
+            _uiController = new UIController(_data);
+            _uiController.StartGameButton.UIButtonClick += StartGame;
+            _uiController.HideAllMenus();
+            _uiController.ShowMainMenu();
         }
 
         private void StartGame()
         {
-            _mainMenuView.StartGameButton.UIButtonClick -= StartGame;
-            new GameInitialization(_controllers, _data);
+            _uiController.StartGameButton.UIButtonClick -= StartGame;
+            _reference = new Reference();
+            new GameInitialization(_controllers, _data, _reference);
             _controllers.Initialization();
             GameInitialized?.Invoke();
         }
@@ -37,7 +41,7 @@ namespace TeamBlue_Asteroids
         private void StartGameLoop()
         {
             GameInitialized -= StartGameLoop;
-            _mainMenuView.Dispose();
+            _uiController.HideMainMenu();
             var gameLoop = _data.GameLoop;
         }
     }
