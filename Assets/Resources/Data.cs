@@ -74,7 +74,7 @@ namespace TeamBlue_Asteroids
         {
             get
             {
-                var background = Resources.Load<GameObject>(Path.Combine(_dataPath, _background01));
+                var background = Resources.Load<GameObject>("Datas" + _background01);
                 Instantiate(background);
                 return background;
             }

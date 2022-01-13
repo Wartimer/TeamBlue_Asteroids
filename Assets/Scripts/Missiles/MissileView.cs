@@ -121,10 +121,10 @@ namespace TeamBlue_Asteroids
 
         internal void GetPoints()
         {
-            _p0 = _route.GetChild(0).position;
-            _p1 = _route.GetChild(1).position;
-            _p2 = _route.GetChild(2).position;
-            _p3 = _route.GetChild(3).position;
+            _p0 = _route.GetChild(1).position;
+            _p1 = _route.GetChild(2).position;
+            _p2 = _route.GetChild(3).position;
+            _p3 = _route.GetChild(4).position;
         }
 
         private void FollowRoute(float deltaTime)

@@ -11,9 +11,8 @@ namespace TeamBlue_Asteroids
         private float _firstSpawnTime = 0;
         private List<SpawnPoint> _spawnPoints;
         private InteractiveObjectsController _executeObjectsController;
-        internal SpawnController(EnemyFactory enemyFactory, InteractiveObjectsController executeObjectsController)
+        internal SpawnController(InteractiveObjectsController executeObjectsController)
         {
-            _enemyFactory = enemyFactory;
             _spawnPoints = Object.FindObjectsOfType<SpawnPoint>().ToList();
             _executeObjectsController = executeObjectsController;
         }
@@ -30,7 +29,7 @@ namespace TeamBlue_Asteroids
 
         private void GetEnemy(float time)
         {
-            var pointIndex = Random.Range(0, _spawnPoints.Count);
+            var pointIndex = Random.Range(0, _spawnPoints.Count+1);
             var rnd = Random.Range(0, 4);
             EnemyView enemy;
             switch (rnd)
