@@ -13,6 +13,7 @@ namespace TeamBlue_Asteroids
         private AudioSource _audioSource;
         private AudioClip _shootSound;
         
+        
         internal AudioClip Sound
         {
             set => _shootSound = value;
@@ -29,6 +30,7 @@ namespace TeamBlue_Asteroids
             _audioSource = GetComponent<AudioSource>();
             _stats.Health = _playerModel.HitPoints;
             _stats.Armour = _playerModel.Armour;
+           
         }
         
         public void TakeDamage(int damage)

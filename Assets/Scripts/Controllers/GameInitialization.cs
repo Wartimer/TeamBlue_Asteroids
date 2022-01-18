@@ -4,7 +4,7 @@ namespace TeamBlue_Asteroids
 {
     internal sealed class GameInitialization
     {
-        public GameInitialization(Controllers controllers, Data data, Reference reference)
+        public GameInitialization(Controllers controllers, Data data, Reference reference, UIController uIController)
         {
             Camera camera = Camera.main;
             var interObjController = new InteractiveObjectsController();
@@ -15,6 +15,7 @@ namespace TeamBlue_Asteroids
             var enemySpawnSystem = new EnemySpawnSystem(data, interObjController, controllers);
             var explosionSpawnController = new ExplosionSpawnController(data, interObjController);
             var shootingSystem = new ShootingSystem(data, playerInitialization.GetPlayer().transform, new SoundFactory(data.SoundsData), controllers, inputInitialization.GetKeyInput());
+            
 
             
             controllers.Add(inputInitialization.PCInputHorizontal as IExecute);
@@ -24,6 +25,8 @@ namespace TeamBlue_Asteroids
             
             reference.SetPlayer(playerInitialization.GetPlayer().GetComponent<PlayerView>());
             reference.SetKeyInput(inputInitialization.GetKeyInput());
+            uIController.ShowGameInterface();
+            
         }
     }
 }

@@ -31,6 +31,7 @@ namespace TeamBlue_Asteroids
         {
             _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
             _keyInput.KeyPressed += OnKeyPressed;
+            _uiController.GameInterfaceView.ScoreText.DisplayWonGame += WInGame;
         }
 
         private void Update()
@@ -71,9 +72,17 @@ namespace TeamBlue_Asteroids
             _gamePaused = false;
         }
 
+        private void WInGame()
+        {
+            _gamePaused = true;
+            _reference.PlayerView.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }
+
         public void Dispose()
         {
             _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
+            _uiController.GameInterfaceView.ScoreText.DisplayWonGame -= WInGame;
+
         }
     }
 }

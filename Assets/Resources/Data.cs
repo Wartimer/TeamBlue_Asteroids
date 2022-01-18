@@ -22,6 +22,10 @@ namespace TeamBlue_Asteroids
         [Space] [Header("UI path")] 
         [SerializeField] private string _uiPath;
 
+        [Space]
+        [Header("Buff path")]
+        [SerializeField] private string _buffpath;
+
 
         [Space] [Header("Stage Objects Paths")] 
         [SerializeField] private string _stage01Path;
@@ -129,5 +133,7 @@ namespace TeamBlue_Asteroids
         internal UIData UIData => Resources.Load<UIData>(Path.Combine(_dataPath,_uiPath));
         
         internal RouteData RouteData => Resources.Load<RouteData>(Path.Combine(_dataPath, _routeDataPath));
+
+        internal BuffData BuffData => Resources.Load<BuffData>(Path.Combine(_dataPath, _buffpath));
     }
 }

@@ -34,7 +34,7 @@ namespace TeamBlue_Asteroids {
         private float nextPlay;
         private AudioSource audiosource;
         private Text txtTitle;
-        private float barValue;
+        private float barValue = 100.0f;
         public float BarValue
         {
             get { return barValue; }
