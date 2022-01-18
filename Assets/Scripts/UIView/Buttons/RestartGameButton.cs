@@ -10,6 +10,7 @@ namespace TeamBlue_Asteroids
             base.OnPointerClick(eventData);
             StartCoroutine(ClickDelay());
             SceneManager.LoadScene(0);
+            
         }
     }
 }

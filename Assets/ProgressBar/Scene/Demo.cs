@@ -8,28 +8,32 @@ namespace TeamBlue_Asteroids
     public class Demo : MonoBehaviour
     {
 
-        public ProgressBar Pb;
-        public ProgressBarCircle PbC;
+        public ProgressBar _healthBar;
+        public ProgressBar _armorBar;
+        
 
         private void Start()
         {
-            Pb.BarValue = 50;
-            PbC.BarValue = 50;
+            _healthBar.BarValue = 100;
+            _armorBar.BarValue = 100;
+            
         }
 
         void FixedUpdate()
         {
 
-            if (Input.GetKey(KeyCode.KeypadPlus))
+            if (Input.GetKey(KeyCode.G))
             {
-                Pb.BarValue += 1;
-                PbC.BarValue += 1;
+                _healthBar.BarValue += 1;
+                _armorBar.BarValue += 1;
+                
             }
 
-            if (Input.GetKey(KeyCode.KeypadMinus))
+            if (Input.GetKey(KeyCode.H))
             {
-                Pb.BarValue -= 1;
-                PbC.BarValue -= 1;
+                _healthBar.BarValue -= 1;
+                _armorBar.BarValue -= 1;
+                
             }
         }
     }

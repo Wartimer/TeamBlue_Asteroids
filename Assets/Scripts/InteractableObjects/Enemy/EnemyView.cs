@@ -54,6 +54,7 @@ namespace TeamBlue_Asteroids
                 _hitPoints -= amount;
             if (_hitPoints <= 0)
                 Dispose();
+            
         }
         
 
@@ -67,6 +68,7 @@ namespace TeamBlue_Asteroids
         public override void Dispose()
         {
             EnemyDead?.Invoke(this);
+            GlobalEventManager.SendEnemyKilled();
             base.Dispose();
         }
     }
