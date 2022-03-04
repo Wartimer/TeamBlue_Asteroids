@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +8,8 @@ namespace TeamBlue_Asteroids
     {
         public override void OnPointerClick(PointerEventData eventData)
         {
+            Debug.Log("Restart Button Clicked)");
             base.OnPointerClick(eventData);
-            StartCoroutine(ClickDelay());
-            SceneManager.LoadScene(0);
-            
         }
     }
 }

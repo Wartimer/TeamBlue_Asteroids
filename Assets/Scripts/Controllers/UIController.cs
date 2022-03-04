@@ -20,8 +20,8 @@ namespace TeamBlue_Asteroids
         private UIButton _settingsButton;
         private UIButton _settingsBackButton;
         private UIButton _continueButton;
-        private UIButton _restartButton;
-        private UIButton _restartGameButton;
+        private UIButton _winGameRestartButton;
+        private UIButton _loseGameRestartButton;
         private ScoreText _scoreText;
         
 
@@ -32,7 +32,8 @@ namespace TeamBlue_Asteroids
     
         internal PauseMenuView PauseMenu => _pauseMenu;
         internal UIButton StartGameButton => _startGameButton;
-        internal UIButton RestartButton => _restartButton;
+        internal UIButton WinGameRestartButton => _winGameRestartButton;
+        internal UIButton LoseGameRestartButton => _loseGameRestartButton;
 
         internal GameInterfaceView GameInterfaceView => _gameInterface;
 
@@ -48,13 +49,12 @@ namespace TeamBlue_Asteroids
             _gameInterface = new GameInterfaceView(_uiFactory.CreateUiElement(UiType.GameInterface));
             _displayWonGame = new DisplayWonGameView(_uiFactory.CreateUiElement(UiType.DisplayWonGame));
             
-            _restartGameButton = _displayWonGame.RestarGameButton;
             _startGameButton = _mainMenu.StartGameButton;
             _settingsButton = _mainMenu.SettingsButton;
             _settingsBackButton = _settingsMenu.SettingsBackButton;
             _continueButton = _pauseMenu.ContinueButton;
-            _restartButton = _gameOverMenu.RestartButton;
-            
+            _loseGameRestartButton = _gameOverMenu.RestartButton;
+            _winGameRestartButton = _displayWonGame.RestarGameButton;
             
             _settingsButton.UIButtonClick += ShowSettings;
             _settingsBackButton.UIButtonClick += HideSettings;
