@@ -1,67 +1,47 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace TeamBlue_Asteroids
 {
-    internal class EnemyView : InteractiveObject, IDamagable, IMove
+    internal class EnemyView : InteractiveObject, IMove
     {
         internal event Action<EnemyView> EnemyDead;
-        
-        private float _speed;
-        private int _hitPoints;
-        private int _damage;
-        [SerializeField] private EnemyModel _enemyModel;
 
-        internal EnemyModel Model
-        {
-            set => _enemyModel = value;
-        }
-
-        internal virtual void Execute(float time)
-        {
-            Move(time);
-        }
+        private UnitStats _enemyStats;
         
-        public void Move(float time)
+        [SerializeField] private UnitConfig _enemyConfig;
+        
+        internal UnitStats EnemyStats => _enemyStats;
+        
+        public void Move(Vector3 position)
         {
-            transform.position += (Vector3.down * _speed * time);
+            transform.position += position;
         }
         
         protected virtual void OnEnable()
         {
-            EnemyModelInit();
+            EnemyInit();
         }
 
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
             if (!other.gameObject.CompareTag("Player")) return;
-            other.gameObject.GetComponent<PlayerView>().TakeDamage(_damage);
+            _player = other.GetComponent<PlayerView>();
+            Interaction();
             Dispose();
         }
 
         protected override void Interaction()
         {
-            
-            _player.TakeDamage(_damage);
-            
+            _player.PlayerStats.TakeDamage(_enemyStats.CollisionDamage);
         }
-        
-        public void TakeDamage(int amount)
-        {
-            if (_hitPoints > 0)
-                _hitPoints -= amount;
-            if (_hitPoints <= 0)
-                Dispose();
-        }
-        
 
-        protected virtual void EnemyModelInit()
+        protected virtual void EnemyInit()
         {
-            _speed = _enemyModel.Speed;
-            _hitPoints = _enemyModel.HitPoints;
-            _damage = _enemyModel.Damage;
+            _enemyStats = new EnemyStats(_enemyConfig);
         }
         
         public override void Dispose()

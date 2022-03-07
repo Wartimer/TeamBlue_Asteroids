@@ -17,16 +17,10 @@ namespace TeamBlue_Asteroids
             transform.Rotate(Vector3.forward * (time * _rotationSpeed),
                 Space.World);
         }
-
-        internal override void Execute(float time)
+        
+        protected override void EnemyInit()
         {
-            base.Execute(time);
-            Rotation(time);
-        }
-
-        protected override void EnemyModelInit()
-        {
-            base.EnemyModelInit();
+            base.EnemyInit();
             _rotationSpeed = Random.Range(-20, 20);
         }
 

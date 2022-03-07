@@ -27,7 +27,6 @@ namespace TeamBlue_Asteroids
             if (_stack.Count == 0)
             {
                 effect = Object.Instantiate(_effectFactory.CreateEffect(EffectType.Explosion), _point, Quaternion.identity).AddComponent<EffectView>();
-                effect.Pool = this;
             }
             else
             {

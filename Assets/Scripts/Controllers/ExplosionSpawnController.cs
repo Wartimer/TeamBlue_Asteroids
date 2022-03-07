@@ -26,26 +26,35 @@ namespace TeamBlue_Asteroids
         internal void SpawnExplosion(Vector3 point)
         {
             var obj = _effectsPool.Pop(point);
-            obj.ExplosionEnd += RemoveExplosion;
             _explosions.Add(obj);
         }
 
         private void RemoveExplosion(EffectView obj)
         {
-            obj.ExplosionEnd -= RemoveExplosion;
             _explosions.Remove(obj);
         }
 
         public void Execute(float deltaTime)
         {
-            foreach (var explosion in _explosions.ToList())
+            foreach (var explosion in _explosions)
             {
-                explosion.CheckState(deltaTime);
+                CheckState(deltaTime, explosion);
             }
         }
 
         public void Initialization()
         {
+        }
+        
+        internal void CheckState(float deltaTime, EffectView effect)
+        {
+            effect.StartLifeTime += deltaTime;
+            effect.transform.position += Vector3.up * 2 * deltaTime;
+            if (effect.StartLifeTime > effect.Duration)
+            {
+                RemoveExplosion(effect);
+                _effectsPool.Push(effect);
+            }
         }
 
         public void Dispose()
