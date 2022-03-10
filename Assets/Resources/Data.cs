@@ -21,9 +21,17 @@ namespace TeamBlue_Asteroids
 
         [Space] [Header("UI path")] 
         [SerializeField] private string _uiPath;
-        
+
         [Space] [Header("Stage Objects Paths")]
         [SerializeField] private string _bgDataPath;
+
+
+        [Space]
+        [Header("Buff path")]
+        [SerializeField] private string _buffpath;
+
+        [Space] [Header("Stage Objects Paths")] 
+
         [SerializeField] private string _stage01Path;
         [SerializeField] private string _stars01;
         
@@ -110,9 +118,11 @@ namespace TeamBlue_Asteroids
         internal BackgroundData BgData => Resources.Load<BackgroundData>(Path.Combine(_dataPath,_bgDataPath));
         
         internal RouteData RouteData => Resources.Load<RouteData>(Path.Combine(_dataPath, _routeDataPath));
+
         
         //Configurations
         internal UnitConfig UnitTitaniumFighter => Resources.Load<UnitConfig>(Path.Combine(_dataPath, _playerConfigPath));
 
+        internal BuffData BuffData => Resources.Load<BuffData>(Path.Combine(_dataPath, _buffpath));
     }
 }

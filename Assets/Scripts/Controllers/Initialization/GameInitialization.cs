@@ -4,7 +4,7 @@ namespace TeamBlue_Asteroids
 {
     internal sealed class GameInitialization
     {
-        public GameInitialization(Controllers controllers, Data data, Reference reference)
+        public GameInitialization(Controllers controllers, Data data, Reference reference, UIController uIController)
         {
             Camera camera = Camera.main;
             var interObjController = new InteractiveObjectsController();
@@ -24,6 +24,8 @@ namespace TeamBlue_Asteroids
             
             reference.SetPlayer(playerInitialization.GetPlayer().GetComponent<PlayerView>());
             reference.SetKeyInput(inputInitialization.GetKeyInput());
+            uIController.ShowGameInterface();
+            
         }
     }
 }

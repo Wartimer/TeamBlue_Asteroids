@@ -25,6 +25,7 @@ namespace TeamBlue_Asteroids
             _controllers = new Controllers();
             _uiController = new UIController(_data);
             _uiController.StartGameButton.UIButtonClick += StartGame;
+            
             _uiController.HideAllMenus();
             _uiController.ShowMainMenu();
         }
@@ -33,10 +34,12 @@ namespace TeamBlue_Asteroids
         {
             _uiController.StartGameButton.UIButtonClick -= StartGame;
             _reference = new Reference();
-            new GameInitialization(_controllers, _data, _reference);
+            new GameInitialization(_controllers, _data, _reference, _uiController);
             _controllers.Initialization();
             GameInitialized?.Invoke();
         }
+
+       
 
         private void StartGameLoop()
         {

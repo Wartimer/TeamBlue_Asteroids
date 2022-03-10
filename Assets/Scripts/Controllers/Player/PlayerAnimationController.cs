@@ -28,7 +28,7 @@ namespace TeamBlue_Asteroids
         private void OnHorizontalAxisChange(float value)
         {
             _horizontal = value * 0.4f;
-            Debug.Log(_horizontal);
+            //Debug.Log(_horizontal);
         }
         
         public void FixedExecute(float deltaTime)

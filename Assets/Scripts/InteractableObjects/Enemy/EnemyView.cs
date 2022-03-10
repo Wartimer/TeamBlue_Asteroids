@@ -36,7 +36,9 @@ namespace TeamBlue_Asteroids
 
         protected override void Interaction()
         {
+
             _player.PlayerStats.TakeDamage(_enemyStats.CollisionDamage);
+            
         }
 
         protected virtual void EnemyInit()
@@ -47,6 +49,7 @@ namespace TeamBlue_Asteroids
         public override void Dispose()
         {
             EnemyDead?.Invoke(this);
+            GlobalEventManager.SendEnemyKilled();
             base.Dispose();
         }
     }

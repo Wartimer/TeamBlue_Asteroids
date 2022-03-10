@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace TeamBlue_Asteroids
 {
@@ -31,6 +33,9 @@ namespace TeamBlue_Asteroids
         {
             _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
             _keyInput.KeyPressed += OnKeyPressed;
+            _uiController.GameInterfaceView.ScoreText.DisplayWonGame += WInGame;
+            _uiController.WinGameRestartButton.UIButtonClick += RestartGame;
+            _uiController.LoseGameRestartButton.UIButtonClick += RestartGame;
         }
 
         private void Update()
@@ -71,9 +76,23 @@ namespace TeamBlue_Asteroids
             _gamePaused = false;
         }
 
+        private void WInGame()
+        {
+            _gamePaused = true;
+            _reference.PlayerView.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        }
+
+        private void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         public void Dispose()
         {
-            _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
+            _uiController.PauseMenu.ContinueButton.UIButtonClick -= OnContinueButtonClick;
+            _uiController.GameInterfaceView.ScoreText.DisplayWonGame -= WInGame;
+            _uiController.WinGameRestartButton.UIButtonClick -= RestartGame;
+            _uiController.LoseGameRestartButton.UIButtonClick -= RestartGame;
         }
     }
 }
