@@ -18,9 +18,9 @@ namespace TeamBlue_Asteroids
             _starsFactory = new StarsFactory(_data);
         }
 
-        internal GameObject CreateBackGround(BgType type)
+        internal void CreateBackGround(BgType type)
         {
-            return _backgroundFactory.CreateBackground(type);
+            _backgroundFactory.CreateBackground(type);
         }
 
         internal void CreateStars()

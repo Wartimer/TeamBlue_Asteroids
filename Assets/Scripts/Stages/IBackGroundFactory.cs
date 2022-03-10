@@ -4,6 +4,6 @@ namespace TeamBlue_Asteroids
 {
     internal interface IBackGroundFactory
     {
-        GameObject CreateBackground(BgType type);
+        BackgroundView CreateBackground(BgType type);
     }
 }

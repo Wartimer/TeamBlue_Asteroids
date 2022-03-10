@@ -1,25 +1,19 @@
-using System;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
     internal class BackgroundFactory : IBackGroundFactory
     {
-        private readonly Data _data;
+        private readonly BackgroundData _data;
 
         internal BackgroundFactory(Data data)
         {
-            _data = data;
+            _data = data.BgData;
         }
         
-        public GameObject CreateBackground(BgType type)
+        public BackgroundView CreateBackground(BgType type)
         {
-            if(type == BgType.FastBg)
-                return _data.BackGround01;
-            if(type == BgType.SlowBG)
-                return _data.BackGround02;
-            
-            return null;
+            return Object.Instantiate(_data.GetBackground(type));
         }
     }
 }

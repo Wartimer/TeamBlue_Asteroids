@@ -1,55 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
 
 namespace TeamBlue_Asteroids
 {
-    internal class MissileView : MonoBehaviour, IDisposable
+    internal class MissileView : InteractiveObject, IDisposable
     {
         internal event Action<MissileView> MissileDestroyed;
         
+        private int _damage = 40;
         private float _routeSpeed = 2f;
         private float _toTargetSpeed = 8f;
-        private int _damage = 40;
         private float _time;
-        private int _routeNumber;
-        private AudioSource _audioSource;
-        private AudioClip _asteroidShoot;
-        private SoundFactory _soundFactory;
-
-
-        private Vector3 _forward;
-
         private bool _onStartingRoute = true;
 
-        private Transform _route;
-        [SerializeField] private Transform _target;
-        
-        private TrailRenderer _trail;
-        
+        private Vector3 _forward;
         private Vector3 _p0;
         private Vector3 _p1;
         private Vector3 _p2;
         private Vector3 _p3;
         private Vector3 _missilePosition;
         
+        private EnemyView _enemyView;
+        
+        private AudioSource _audioSource;
+        private AudioClip _asteroidShoot;
+        
+        private Transform _route;
+        private TrailRenderer _trail;
+        
+        
         internal AudioClip Sound
         {
             set => _asteroidShoot = value;
         }
-
-        internal Transform Target
-        {
-            set => _target = value;
-        }
-      
-
+        
         internal Transform Route
         {
             set => _route = value;
@@ -72,8 +56,14 @@ namespace TeamBlue_Asteroids
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Enemy")) return;
-            other.GetComponent<IDamagable>().TakeDamage(_damage);
+            _enemyView = other.GetComponent<EnemyView>();
+            Interaction();
             Dispose();
+        }
+
+        protected override void Interaction()
+        {
+            _enemyView.EnemyStats.TakeDamage(_damage);
         }
 
         private void OnTriggerExit(Collider other)
@@ -87,7 +77,7 @@ namespace TeamBlue_Asteroids
         public void Dispose()
         {
             Route route;
-            if(_route.gameObject.TryGetComponent<Route>(out route))
+            if(_route.gameObject.TryGetComponent(out route))
                 route.Dispose();
             MissileDestroyed?.Invoke(this);
         }

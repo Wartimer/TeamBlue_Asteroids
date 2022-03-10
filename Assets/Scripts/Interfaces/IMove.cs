@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace TeamBlue_Asteroids
 {
-    public interface IMove
+    internal interface IMove
     {
-        void Move(float time);
+        void Move(Vector3 position);
     }
 }

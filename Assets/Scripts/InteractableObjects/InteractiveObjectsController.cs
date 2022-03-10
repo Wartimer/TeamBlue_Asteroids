@@ -15,11 +15,17 @@ namespace TeamBlue_Asteroids
             _executeObjects = new List<EnemyView>();
         }
         
-        public void FixedExecute(float time)
+        public void FixedExecute(float deltaTime)
         {
             for (int i = 0; i < _executeObjects.Count; i++)
             {
-                _executeObjects[i].Execute(time);
+                if (_executeObjects[i] is IRotation rotation)
+                {
+                    rotation.Rotation(deltaTime);
+                }
+                var speed = _executeObjects[i].EnemyStats.Speed * deltaTime;
+                var position = Vector3.down * speed;
+                _executeObjects[i].Move(position);
             }
         }
 
