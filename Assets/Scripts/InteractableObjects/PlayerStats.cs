@@ -1,38 +1,47 @@
+using System;
+using System.Threading;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
     internal sealed class PlayerStats : UnitStats
     {
-        
-        public PlayerStats(UnitConfig config) : base(config) { }
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        public event Action PlayerDead;
+        public PlayerStats(UnitConfig config, InteractiveObject gameObject) : base(config, gameObject) { }
         internal override async void TakeDamage(int damage)
         {
             var result = await Task.Run(() =>
             {
-                if (_armour > 0)
+                var currentHealth = _health;
+                var currentArmour = _armour;
+
+                if (currentArmour - damage > 0)
                 {
-                    if(_armour - damage >= 0)
-                        _armour -= damage;
+                    currentArmour -= damage;
                 }
-                else if (_armour - damage < 0)
+                if (currentArmour - damage < 0)
                 {
                     var negativeDiff = -(_armour - damage);
-                    _armour = 0;
-                    _health -= negativeDiff;
+                    currentArmour = 0;
+                    currentHealth -= negativeDiff;
                 }
-                else if (_armour == 0)
+                if (currentArmour == 0 && currentHealth > 0)
                 {
-                    if (_health > 0)
-                        _health -= damage;
-                    if (_health < 0)
-                    {
-                        _health = 0;
-                    }
+                    currentHealth -= damage;
                 }
-                return _health;
+                if (currentArmour == 0 && currentHealth <= 0)
+                {
+                    currentHealth = 0;
+                }
+                
+                Debug.Log($"Armour: {currentArmour}, Health{currentHealth}");
+                return (currentHealth, currentArmour);
             });
-        }
 
+            _health = result.currentHealth;
+            _armour = result.currentArmour;
+        }
     }
 }

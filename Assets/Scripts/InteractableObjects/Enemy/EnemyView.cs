@@ -8,7 +8,6 @@ namespace TeamBlue_Asteroids
     internal class EnemyView : InteractiveObject, IMove
     {
         internal event Action<EnemyView> EnemyDead;
-
         private UnitStats _enemyStats;
         
         [SerializeField] private UnitConfig _enemyConfig;
@@ -27,7 +26,6 @@ namespace TeamBlue_Asteroids
 
         protected override void OnTriggerEnter(Collider other)
         {
-            base.OnTriggerEnter(other);
             if (!other.gameObject.CompareTag("Player")) return;
             _player = other.GetComponent<PlayerView>();
             Interaction();
@@ -36,20 +34,18 @@ namespace TeamBlue_Asteroids
 
         protected override void Interaction()
         {
-
             _player.PlayerStats.TakeDamage(_enemyStats.CollisionDamage);
             
         }
 
         protected virtual void EnemyInit()
         {
-            _enemyStats = new EnemyStats(_enemyConfig);
+            _enemyStats = new EnemyStats(_enemyConfig, this);
         }
         
         public override void Dispose()
         {
             EnemyDead?.Invoke(this);
-            GlobalEventManager.SendEnemyKilled();
             base.Dispose();
         }
     }

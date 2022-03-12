@@ -23,9 +23,17 @@ namespace TeamBlue_Asteroids
                 {
                     rotation.Rotation(deltaTime);
                 }
+
+                if (_executeObjects[i].transform.position.y < -25)
+                {
+                    _executeObjects[i].Dispose();
+                    continue;
+                }
+
                 var speed = _executeObjects[i].EnemyStats.Speed * deltaTime;
                 var position = Vector3.down * speed;
                 _executeObjects[i].Move(position);
+                
             }
         }
 

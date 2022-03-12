@@ -43,11 +43,11 @@ namespace TeamBlue_Asteroids
 
         }
 
-        internal void Destroy(MissileView missile)
+        private void Destroy(MissileView missile)
         {
             missile.MissileDestroyed -= Destroy;
-            _rocketPool.Push(missile);
             _movingMissiles.RemoveMissile(missile);
+            _rocketPool.Push(missile);
         }
     }
 }

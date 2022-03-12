@@ -49,7 +49,7 @@ namespace TeamBlue_Asteroids
         internal void CheckState(float deltaTime, EffectView effect)
         {
             effect.StartLifeTime += deltaTime;
-            effect.transform.position += Vector3.up * 2 * deltaTime;
+            effect.transform.position += Vector3.down * 2 * deltaTime;
             if (effect.StartLifeTime > effect.Duration)
             {
                 RemoveExplosion(effect);

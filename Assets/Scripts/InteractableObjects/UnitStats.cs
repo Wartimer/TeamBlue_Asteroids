@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 
 namespace TeamBlue_Asteroids
 {
-    public abstract class UnitStats
+    internal abstract class UnitStats
     {
+        protected InteractiveObject _gameObject;
         protected readonly float _speed;
         protected int _health;
         protected int _armour;
@@ -16,12 +17,13 @@ namespace TeamBlue_Asteroids
         internal int CollisionDamage => _collisionDamage;
         
         
-        internal UnitStats(UnitConfig config)
+        internal UnitStats(UnitConfig config, InteractiveObject gameObject)
         {
             _speed = config.Speed;
             _health = config.HitPoints;
             _armour = config.Armour;
             _collisionDamage = config.CollisionDamage;
+            _gameObject = gameObject;
         }
 
         internal abstract void TakeDamage(int damage);

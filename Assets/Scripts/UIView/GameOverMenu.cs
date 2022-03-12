@@ -4,12 +4,12 @@ namespace TeamBlue_Asteroids
 {
     public class GameOverMenu : UIView
     {
-        private UIButton _restartButton;
+        private UIButton _restartGameButton;
 
-        internal UIButton RestartButton => _restartButton;
+        internal UIButton RestartGameButton => _restartGameButton;
         internal GameOverMenu(GameObject element) : base(element)
         {
-            _restartButton = element.GetComponentInChildren<RestartGameButton>();
+            _restartGameButton = element.GetComponentInChildren<RestartGameButton>();
         }
     }
 }

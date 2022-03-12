@@ -23,13 +23,8 @@ namespace TeamBlue_Asteroids
 
         protected abstract void Interaction();
 
-        protected virtual void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Boundaries"))
-            {
-                Dispose();
-            }
-        }
+        protected abstract void OnTriggerEnter(Collider other);
+
 
         public virtual void Dispose()
         {

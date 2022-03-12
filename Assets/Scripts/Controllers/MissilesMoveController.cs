@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TeamBlue_Asteroids
 {
@@ -12,8 +13,10 @@ namespace TeamBlue_Asteroids
         }
         public void FixedExecute(float time)
         {
-            foreach(var missile in _missiles)
+            foreach (var missile in _missiles.ToList())
+            {
                 missile.Move(time);
+            }
         }
     }
 }

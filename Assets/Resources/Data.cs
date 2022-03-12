@@ -24,29 +24,25 @@ namespace TeamBlue_Asteroids
 
         [Space] [Header("Stage Objects Paths")]
         [SerializeField] private string _bgDataPath;
-
-
-        [Space]
-        [Header("Buff path")]
-        [SerializeField] private string _buffpath;
-
-        [Space] [Header("Stage Objects Paths")] 
-
         [SerializeField] private string _stage01Path;
         [SerializeField] private string _stars01;
+
+        [Space] [Header("Buffs Data path")]
+        [SerializeField] private string _buffDataPath;
         
-        [Space][Header("Bullets")]
+        [Space][Header("Bullets Data path")]
         [SerializeField] private string _rocket01;
 
-        [Space] [Header("Particles Paths")] 
+        [Space] [Header("Particles Data Paths")] 
         [SerializeField] private string _explosionPath;
 
+        [Space] [Header("Move Clamp Configs Data path")] [SerializeField]
+        private string _moveClampData;
+        
         [Space] [Header("GameLoop Path")] 
         [SerializeField] private string _gameLoopPath;
 
         private Canvas _canvas;
-
-
         internal Transform Canvas
         {
             get
@@ -123,6 +119,9 @@ namespace TeamBlue_Asteroids
         //Configurations
         internal UnitConfig UnitTitaniumFighter => Resources.Load<UnitConfig>(Path.Combine(_dataPath, _playerConfigPath));
 
-        internal BuffData BuffData => Resources.Load<BuffData>(Path.Combine(_dataPath, _buffpath));
+        internal BuffData BuffData => Resources.Load<BuffData>(Path.Combine(_dataPath, _buffDataPath));
+
+        internal MoveClampConfigsData MoveClampConfigs =>
+            Resources.Load<MoveClampConfigsData>(Path.Combine(_dataPath, _moveClampData));
     }
 }
