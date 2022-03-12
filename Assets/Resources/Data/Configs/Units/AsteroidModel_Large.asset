@@ -15,4 +15,4 @@ MonoBehaviour:
   _speed: 3
   _hitPoints: 150
   _armour: 0
-  _collisionDamage: 200
+  _collisionDamage: 25

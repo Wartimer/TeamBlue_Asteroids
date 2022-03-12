@@ -31,12 +31,14 @@ namespace TeamBlue_Asteroids
 
         private void Start()
         {
-            _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
             _keyInput.KeyPressed += OnKeyPressed;
+            _uiController.PauseMenu.ContinueButton.UIButtonClick += OnContinueButtonClick;
             _uiController.GameInterfaceView.ScoreText.DisplayWonGame += WInGame;
             _uiController.WinGameRestartButton.UIButtonClick += RestartGame;
             _uiController.LoseGameRestartButton.UIButtonClick += RestartGame;
+            _reference.PlayerView.PlayerDestroyed += LoseGame;
         }
+
 
         private void Update()
         {
@@ -76,11 +78,20 @@ namespace TeamBlue_Asteroids
             _gamePaused = false;
         }
 
+        private void LoseGame()
+        {
+            _gamePaused = true;
+            _uiController.HideAllMenus();
+            _uiController.ShowGameOver();
+        }
+        
         private void WInGame()
         {
             _gamePaused = true;
             _reference.PlayerView.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
+        
+        
 
         private void RestartGame()
         {
@@ -93,6 +104,7 @@ namespace TeamBlue_Asteroids
             _uiController.GameInterfaceView.ScoreText.DisplayWonGame -= WInGame;
             _uiController.WinGameRestartButton.UIButtonClick -= RestartGame;
             _uiController.LoseGameRestartButton.UIButtonClick -= RestartGame;
+            _reference.PlayerView.PlayerDestroyed -= LoseGame;
         }
     }
 }

@@ -53,7 +53,7 @@ namespace TeamBlue_Asteroids
         }
         
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Enemy")) return;
             _enemyView = other.GetComponent<EnemyView>();
@@ -65,20 +65,10 @@ namespace TeamBlue_Asteroids
         {
             _enemyView.EnemyStats.TakeDamage(_damage);
         }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Boundaries"))
-            {
-                    Dispose();
-            }
-        }
-
+        
         public void Dispose()
         {
-            Route route;
-            if(_route.gameObject.TryGetComponent(out route))
-                route.Dispose();
+            
             MissileDestroyed?.Invoke(this);
         }
 
@@ -96,8 +86,12 @@ namespace TeamBlue_Asteroids
             {
                 FollowRoute(deltaTime);
             }
-            
-            if (transform.position.y >= _p3.y) _onStartingRoute = false;
+
+            if (transform.position.y >= _p3.y && _onStartingRoute)
+            {
+                _onStartingRoute = false;
+                _route.GetComponent<Route>().Dispose();
+            }
 
             // if (_target)
             // {

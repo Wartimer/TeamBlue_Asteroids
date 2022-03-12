@@ -8,7 +8,7 @@ namespace TeamBlue_Asteroids
         {
             Camera camera = Camera.main;
             var interObjController = new InteractiveObjectsController();
-            // Инициализация фабрики уровней и инициализация уровня
+
             var inputInitialization = new InputInitialization(controllers);
             var playerInitialization = new PlayerInitialization(data, PlayerType.TitaniumFighter, inputInitialization.PCInputHorizontal, inputInitialization.PCInputVertical, camera);
             var stageInitialization = new StageInitialization(data);
@@ -16,8 +16,6 @@ namespace TeamBlue_Asteroids
             var explosionSpawnController = new ExplosionSpawnController(data, interObjController);
             var shootingSystem = new ShootingSystemInitialization(data, playerInitialization.GetPlayer().transform, new SoundFactory(data.SoundsData), controllers, inputInitialization.GetKeyInput());
 
-            
-            controllers.Add(inputInitialization.PCInputHorizontal as IExecute);
             controllers.Add(stageInitialization.BackgroundController);
             controllers.Add(playerInitialization.PlayerMoveController);
             controllers.Add(playerInitialization.PlayerAnimationController);

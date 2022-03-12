@@ -23,12 +23,6 @@ namespace TeamBlue_Asteroids
         private UIButton _winGameRestartButton;
         private UIButton _loseGameRestartButton;
         private ScoreText _scoreText;
-        
-
-        //public delegate void DisplayWonGame();
-        //public static DisplayWonGame displayWonGame;
-
-
     
         internal PauseMenuView PauseMenu => _pauseMenu;
         internal UIButton StartGameButton => _startGameButton;
@@ -53,7 +47,7 @@ namespace TeamBlue_Asteroids
             _settingsButton = _mainMenu.SettingsButton;
             _settingsBackButton = _settingsMenu.SettingsBackButton;
             _continueButton = _pauseMenu.ContinueButton;
-            _loseGameRestartButton = _gameOverMenu.RestartButton;
+            _loseGameRestartButton = _gameOverMenu.RestartGameButton;
             _winGameRestartButton = _displayWonGame.RestarGameButton;
             
             _settingsButton.UIButtonClick += ShowSettings;
@@ -116,7 +110,7 @@ namespace TeamBlue_Asteroids
         {           
             _displayWonGame.Show();
         }
-        internal void HideDisplayWonGane()
+        internal void HideDisplayWonGame()
         {
             _displayWonGame.Hide();
         }
@@ -136,7 +130,7 @@ namespace TeamBlue_Asteroids
             HidePauseMenu();
             HideGameOver();
             HideGameInterface();
-            HideDisplayWonGane();
+            HideDisplayWonGame();
         }
     }
 }

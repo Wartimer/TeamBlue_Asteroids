@@ -1,10 +1,11 @@
 
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace TeamBlue_Asteroids
 {
-    internal sealed class PlayerView : MonoBehaviour, IDisposable
+    internal sealed class PlayerView : InteractiveObject, IDisposable
     {
         internal event Action PlayerDestroyed;
         
@@ -28,19 +29,22 @@ namespace TeamBlue_Asteroids
         private void PlayerInit()
         {
             _audioSource = GetComponent<AudioSource>();
-            _stats = new PlayerStats(_playerConfig);
+            _stats = new PlayerStats(_playerConfig, this);
         }
         
+        
+        protected override void Interaction(){}
+        protected override void OnTriggerEnter(Collider other){}
 
         internal void PlaySound()
         {
             _audioSource.PlayOneShot(_shootSound);
         }
         
-        public void Dispose()
+        public override void Dispose()
         {
             PlayerDestroyed?.Invoke();
-            Destroy(gameObject);
+
         }
     }
 }

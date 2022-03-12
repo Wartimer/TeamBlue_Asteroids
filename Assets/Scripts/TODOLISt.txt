@@ -1,0 +1,22 @@
+TO DO
+1. Make pools for different weapon types. Import Laser asset for the second weapon.
+2. Add firing ability to enemy ships.
+2. Make buff gathering and cooldowns.
+3. Make connection with Armour/Hp bar;
+4. Make SaveGame:
+    Save player's progress.
+5. Make spawn waves. Example: Wave of asteroids, Wave of ships, Boss wave.
+
+
+FIXES
+1. Fix the problem with undestroyed explosions  
+
+REFACTOR
+1. Refactor the GameLoop class.
+2. Refactor the missiles class. Create base class for missiles
+
+TESTS
+1. Test rigidbody clampVelocity with moveBounds
+
+
+
